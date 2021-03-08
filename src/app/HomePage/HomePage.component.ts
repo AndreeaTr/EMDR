@@ -17,6 +17,14 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   navigated = false;
 
+  herosrc = "assets/img/hero-photo.png";
+  descsrc = "assets/img/anchor-lee-kO1G3neRA2o-unsplash.jpg";
+  card1src = "assets/img/stephanie-liverani-Zz5LQe-VSMY-unsplash.jpg";
+  card2src = "assets/img/timothy-ayegbede-MCrBXiMskNE-unsplash.jpg";
+  card3src = "assets/img/michael-dam-mEZ3PoFGs_k-unsplash.jpg";
+  contactsrc = "assets/img/social-media-2786261_1920.jpg";
+
+
   constructor(private router:Router, private activeRoute: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {

@@ -4,9 +4,8 @@
 
     <div class="login-box">
 
-      <div class="title">
-        *Logo*
-      </div>
+      <img class="logo" src="assets/img/emdr logo monochrome white.svg" alt="EMDR therapy logo"/>
+
 
       <form class="form-body" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
 
@@ -42,13 +41,13 @@
         </div>
       </form>
 
-
+<!-- 
       <div class="forpass">
         <a href="#"> Forgot Password ?</a>
-      </div>
+      </div> -->
 
       <div class="new-us">
-        <a href="#">Not a member yet? Sign Up!</a>
+        <a routerLink='/registration'>Not a member yet? Sign Up!</a>
       </div>
     </div>
 

@@ -3,10 +3,8 @@
   <div class="register-card">
 
     <div class="register-box">
-
-      <div class="title">
-        *Logo*
-      </div>
+      
+      <img class="logo" src="assets/img/emdr logo monochrome white.svg" alt="EMDR therapy logo"/>
 
       <form class="form-body" [formGroup]="registrationForm" (ngSubmit)="register()" autocomplete="off">
 
@@ -94,27 +92,26 @@
       </form> 
 
       <div class="alr-us">
-        <a href="#">Already a member? Login!</a>
+        <a routerLink='/login'>Already a member? Login!</a>
       </div>
 
     </div>
 
+  </div>
 
 
-    <div class="footer">
-      <div class="bottom-nav">
-        <a href="#">Home</a>
-        <div class="spacer">|</div>
-        <a href="#">Contact</a>
-        <div class="spacer">|</div>
-        <a href="#">Info</a>
-      </div>
-
-      <div class="emdr">
-        @2020EMDRremote
-      </div>
+  <div class="footer">
+    <div class="bottom-nav">
+      <a href="#">Home</a>
+      <div class="spacer">|</div>
+      <a href="#">Contact</a>
+      <div class="spacer">|</div>
+      <a href="#">Info</a>
     </div>
 
+    <div class="emdr">
+      @2020EMDRremote
+    </div>
   </div>
 
 
