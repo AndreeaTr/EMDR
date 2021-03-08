@@ -1,0 +1,185 @@
+<!-- Top anchor -->
+
+<div #home class="top-anchor"></div>
+
+<!-- Home -->
+
+<div class="nav-container">
+  <div class="topbar">
+    <div class="topbar-elements">
+      <span>(+40)000 000000</span>
+      <span><a routerLink='/registration'>Sign Up</a></span>
+      <span><a routerLink='/login'>Login</a></span>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <div class="nav-elements">
+      <span (click)="navTo(home)">Home</span>
+      <span (click)="navTo(therapy)">EMDR Therapy</span>
+      <span (click)="navTo(help)">Professional Help</span>
+      <span (click)="navTo(faqs)">FAQs</span>
+      <span (click)="navTo(contact)">Contact Us</span>
+    </div>
+    <div matRipple><button routerLink='/chat' class="start-button" mat-raised-button color="#20BEA7">Start Therapy</button></div>   
+  </div>
+</div>
+
+<div class="home-body">
+  <div class="animated-motto">
+    <h4 class="motto">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</h4>
+  </div>
+</div>
+
+
+
+
+
+<!-- EMDR Therapy -->
+
+
+<div  class="therapy-description">
+  <div #therapy class="section-anchor" id="therapyanchor"></div>
+    <div class="description-container">
+        <div class="title1">How EMDR Therapy cures you</div>
+        <div class="description1">“EMDR Therapy changes maladaptive neural networks by connecting the traumatic memory with new information. The distressing thoughts and emotions are blended with new positive thoughts and emotions; embodied awareness allows frozen sensations in the body to resolve through healing movements.”</div>
+    </div>
+</div>
+
+
+<!-- Professionals -->
+
+<div class="professionals-container">
+  <div #help class="section-anchor"></div>
+    <div class="title2">Seek Help from our Professionals</div>
+    <div class="subtitle">Our team of properly trained professionals is ready to guide you on your healing journey. Don’t hesitate to contact your preferred therapist to discuss details and set up an appointment </div> 
+    <div class="cards">
+      <div class="professional-card">
+          <h3 class="card-title">Jane Doe</h3>
+          <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
+          <div class="card-photo photo1"></div>       
+      </div> 
+      
+      <div class="professional-card">
+        <h3 class="card-title">John Doe</h3>
+        <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
+        <div class="card-photo photo2"></div>       
+    </div>
+
+    <div class="professional-card">
+      <h3 class="card-title">Jane Doe</h3>
+      <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
+      <div class="card-photo photo3"></div>       
+  </div>
+    </div> 
+</div> 
+
+
+<!-- FAQs -->
+
+<div class="faqs">
+  <div #faqs class="section-anchor"></div>
+    <div class="title3">Frequently Asked Questions</div>
+
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title> Question number 1</mat-panel-title>
+          <!-- <mat-panel-description></mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Question number 2</mat-panel-title>
+          <!-- <mat-panel-description></mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Question number 3</mat-panel-title>
+          <!-- <mat-panel-description></mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Question number 4</mat-panel-title>
+          <!-- <mat-panel-description></mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Question number 5</mat-panel-title>
+          <!-- <mat-panel-description></mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </mat-expansion-panel>
+
+</div>  
+
+
+
+
+
+
+<!-- Contact -->
+
+<div class="transition">
+</div> 
+
+
+<div class="contact-body">
+  <div #contact class="section-anchor"></div>
+    <div class="title4">Contact Us</div>
+    <div class="subtitle-2">For further details don’t hesitate to contact us and our staff will get back to you with a reply as soon as possible</div>
+
+    <div class="form-container">
+        <div class="contact-image"></div>
+        <div class="contact-form">
+          <form>
+            <div class="form-row1"> 
+              <input class="row1" type="text" name="username" placeholder="Username" id="username">
+              <input class="row1" type="tel" name="Phone" placeholder="Phone" id="phone">
+            </div>
+            <input class="row2" type="text" name="Email" placeholder="Email" id="email">
+            <!-- <input class="row3" type="text" name="Message" placeholder="Message" id="message"> -->
+            <textarea class="row3" type="text" name="Message" placeholder="Message" id="message"></textarea>
+            <div class="button-container" matRipple ><button class="send-button" mat-raised-button color="#20BEA7">Send Message</button></div>
+          </form>
+        </div> 
+
+    </div>  
+
+  </div>  
+  
+  
+
+  <!-- Footer -->
+
+  <div class="footer">
+      <div class="content-left">
+        <div class="logo"></div>
+        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+
+      <div class="content-middle">
+          <a (click)="navTo(home)" class="footer-link">Home</a>
+          <a (click)="navTo(therapy)" class="footer-link">EMDR Therapy</a>
+          <a (click)="navTo(help)" class="footer-link">Professional Help</a>
+          <a (click)="navTo(faqs)" class="footer-link">FAQs</a>
+          <a (click)="navTo(contact)" class="footer-link">Contact Us</a>
+      </div>
+
+      <div class="content-right">
+        <a class="footer-link" href="tel:+403-452-63556">(+40) 345 263556</a>
+        <a class="footer-link" href="tel:+403-452-63556">(+40) 345 263556</a>
+        <a class="footer-link" href="mailto:email@mail.com">email@mail.com</a>
+      </div>   
+
+  </div>

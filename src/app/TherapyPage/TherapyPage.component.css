@@ -1,0 +1,120 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #242424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.ball {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: side-to-side;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    background: radial-gradient(circle at 40px 40px, red, #000);
+}
+
+@keyframes side-to-side {
+    from {left: 0px;}
+    to {left: calc(100vw - 120px);}
+}
+
+
+.dialogue {
+    min-height: 10vh; 
+    width: 20vw;
+    background-color: #e3e3e3;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 11;
+
+}
+
+.dialogue-backdrop {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    z-index: 10;
+    background: rgba(0,0,0,.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.dialogue-text {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dialogue-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialogue-button {
+    height: 30px;
+    background-color: #c7c7c7;
+    border-radius:3px;
+    box-shadow:0 1px 2px rgba(0,0,0,.3);
+    border: 1px solid #ccc;
+    width: 45%;
+
+}
+
+
+.buttons-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: all 0.5s ease-in-out;
+  }
+
+
+
+.button {
+    height: 40px;
+    width: 40px;
+    border-radius: 12px;
+}  
+
+
+.margin-left {
+    margin-left: 10px;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.timer {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #e6e6e6;
+}
+
+

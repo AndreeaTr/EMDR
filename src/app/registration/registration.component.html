@@ -1,0 +1,122 @@
+<div class="register-page">
+
+  <div class="register-card">
+
+    <div class="register-box">
+
+      <div class="title">
+        *Logo*
+      </div>
+
+      <form class="form-body" [formGroup]="registrationForm" (ngSubmit)="register()" autocomplete="off">
+
+        <div class="upper-register">
+          <div class="upper-register-left">
+            <div class="inp">
+              <input type="text" name="firstName" formControlName="firstName" placeholder="First name" id="firstName" autofocus required>
+            </div>
+
+            <div class="inp">
+              <input type="text" name="bday" formControlName="bday" placeholder="Date of Birth" id="bday" required>
+            </div>
+
+
+            <div class="inp">
+              <input type="email" name="email" formControlName="email" placeholder="Email" id="email" required>
+            </div>
+
+            <div class="inp">
+              <input type="text" name="pcode" formControlName="pcode" placeholder="Postal Code" id="pcode" required>
+            </div>
+
+            <div class ="inp">
+              <input type="password" name="password" formControlName="password" placeholder="Password" id="password" [type]="hide ? 'password' : 'text'" required>
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide" id="eye_button" >
+                <mat-icon id="eye_icon">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </div>
+
+          </div> 
+
+          <div class="upper-register-right">
+
+            <div class="inp">
+              <input type="text" name="lastName" formControlName="lastName" placeholder="Last name" id="lastName" required>
+            </div>
+
+            <div class="inp">
+              <select class="book-param" formControlName="gender" required>
+                <option selected value="" disabled hidden >Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="inp">
+              <input type="text" name="phnb" formControlName="phnb" placeholder="Phone Number" id="phnb" required>
+            </div>
+
+            <div class="inp">
+              <input type="text" name="country" formControlName="country" placeholder="Country" id="country" required>
+            </div>
+
+            <div class="inp">
+              <input type="password" name="repeatPassword" formControlName="repeatPassword" placeholder="Confirm password" id="repeatPassword" [type]="hide ? 'password' : 'text'" required>
+            </div>
+          </div> 
+
+        </div>
+
+        
+
+
+        <div class="lower-register">
+
+          <!-- <div class="login-error" *ngIf="loginError">Invalid username or password.</div> -->
+          <!-- <div class="login-error" *ngIf="(username.invalid && (username.dirty || username.touched))
+                                          || (email.invalid && (email.dirty || email.touched))
+                                          || (firstName.invalid && (firstName.dirty || firstName.touched))
+                                          || (lastName.invalid && (lastName.dirty || lastName.touched))">
+                                          All fields must be completed.</div> -->
+
+          <!-- <ng-template #elseBlock> -->
+            <!-- <div class="login-error" *ngIf="username.invalid && (username.dirty || username.touched)">Username is required.</div> -->
+            <!-- <div class="login-error" *ngIf="password.invalid && (password.dirty || password.touched)">Password is required.</div>
+          </ng-template> -->
+
+          <!-- <button id="Register" *ngIf="!isClicked" mat-raised-button color="darkGreen" type="submit" [disabled]="!loginForm.valid">Register</button> -->
+
+          <button id="Register" *ngIf="!isClicked" mat-raised-button color="darkGreen" type="submit" >Sign Up!</button>
+          <mat-spinner [diameter]="50" *ngIf="isClicked"></mat-spinner>
+
+        </div>
+      </form> 
+
+      <div class="alr-us">
+        <a href="#">Already a member? Login!</a>
+      </div>
+
+    </div>
+
+
+
+    <div class="footer">
+      <div class="bottom-nav">
+        <a href="#">Home</a>
+        <div class="spacer">|</div>
+        <a href="#">Contact</a>
+        <div class="spacer">|</div>
+        <a href="#">Info</a>
+      </div>
+
+      <div class="emdr">
+        @2020EMDRremote
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

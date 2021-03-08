@@ -1,0 +1,230 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.register-box {
+  background-color:#20BEA7;
+  border-radius: 23px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width:650px;
+  height:550px;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+
+.title {
+  color:white;
+  font-size:30px;
+  position:relative;
+  bottom:10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-card {
+  display:flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height:670px;
+}
+
+.register-card a {
+  text-decoration: none;
+  color: white;
+}
+
+.register-card a:hover {
+  text-decoration: underline;
+}
+
+.form-body {
+  width:650px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-around;
+  position: relative;
+  top: 25px;
+
+}
+
+.upper-register {
+  display:flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items:center;
+  width:550px;
+  height:330px;
+  position:relative;
+  bottom:15px;
+}
+
+.upper-register-left {
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items:center;
+  width:250px;
+  height:300px;
+  position:relative;
+}
+
+.upper-register-right {
+  display:flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items:center;
+  width:250px;
+  height:300px;
+  position:relative;
+}
+
+.lower-register {
+  height:100px;
+  width:200px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-around;
+}
+
+.alr-us{
+  position:relative;
+  top:40px;
+  font-size:10px;
+}
+
+.inp {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.inp input:focus {
+  outline: none;
+}
+
+#username, #email, #lastName, #firstName, #repeatPassword, #bday, #phnb, #pcode, #country, .book-param{
+  height: 35px;
+  width: 250px;
+  background-color: white;
+  border: 1px solid rgba(196, 196, 196, 0.3);
+  box-sizing: border-box;
+  box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+  padding: 5px;
+  
+}
+
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://cdn4.iconfinder.com/data/icons/mayssam/512/down-512.png) no-repeat right;
+  background-position-x: 220px;
+  background-size: 15px; 
+  
+}
+
+
+
+::placeholder {
+  color: rgba(74, 94, 69, 0.6);
+}
+
+select:invalid {
+  color: rgba(74, 94, 69, 0.4);
+}
+
+select:invalid option:not(:disabled) { color: rgb(54, 54, 54) }
+
+#password {
+  height: 35px;
+  width: 220px;
+  background-color: white;
+  border: 1px solid rgba(196, 196, 196, 0.3);
+  border-right:0px;
+  box-sizing: border-box;
+  box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 7px 0px 0px 7px;
+}
+
+#eye_button {
+  background-color: white;
+  width:30px;
+  height:35px;
+  border-radius:0px 7px 7px 0px;
+  box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.15);
+}
+
+#eye_icon {
+  position: relative;
+  bottom:3px;
+  border:0px;
+  opacity: 30%;
+}
+
+.login-error {
+  /* text-shadow: -1px -1px 0 rgb(255, 79, 79), 1px -1px 0 rgb(255, 79, 79), -1px 1px 0 rgb(255, 79, 79), 1px 1px 0 rgb(255, 79, 79); */
+  border-radius:5px;
+  color:rgb(255, 25, 25);
+  width:195px;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  position:relative;
+  bottom:10px;
+}
+
+.footer {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-around;
+  position: relative;
+  top:20px;
+}
+
+.bottom-nav {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width:200px;
+  font-size:20px
+}
+
+.bottom-nav a {
+  color:#929191;
+  text-decoration: none;
+}
+
+.spacer {
+  color:#929191;
+}
+
+
+.emdr {
+  color:#929191;
+  position:relative;
+  top:15px;
+}
+
+::ng-deep.mat-progress-spinner circle,.mat-spinner circle {
+  stroke: #008D78 !important;
+}
+
+
+.mat-darkGreen {
+  background-color:#008D78;
+  color: rgb(212, 212, 212);
+}
+
+
+
+
