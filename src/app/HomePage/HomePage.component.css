@@ -199,7 +199,7 @@
 .professionals-container {
 
     background-color: #1FB793;
-    height: 1500px;
+    min-height: 1500px;
     /* padding: 150px 20vw; */
     padding: 150px 10vw;
     position: relative;
@@ -232,7 +232,7 @@
 .professional-card {
     background-color: white;
     border-radius: 30px;
-    height: 420px;
+    min-height: 420px;
     width: 30%;
     padding: 0px 32px;
     position: relative;

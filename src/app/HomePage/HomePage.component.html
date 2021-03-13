@@ -143,14 +143,13 @@
     <div class="form-container">
         <div [ngStyle]="{'background-image': 'url(' +contactsrc + ')'}" alt="doodle of a screen surrounded by social media icons" class="contact-image"></div>
         <div class="contact-form">
-          <form>
+          <form (ngSubmit)="formValidation()">
             <div class="form-row1"> 
-              <input class="row1" type="text" name="username" placeholder="Username" id="username">
-              <input class="row1" type="tel" name="Phone" placeholder="Phone" id="phone">
+              <input required class="row1" type="text" name="username" placeholder="Username" id="username" [(ngModel)]="username">
+              <input required class="row1" type="tel" name="Phone" placeholder="Phone" id="phone" [(ngModel)]="phonenumber">
             </div>
-            <input class="row2" type="text" name="Email" placeholder="Email" id="email">
-            <!-- <input class="row3" type="text" name="Message" placeholder="Message" id="message"> -->
-            <textarea class="row3" type="text" name="Message" placeholder="Message" id="message"></textarea>
+            <input required class="row2" type="text" name="Email" placeholder="Email" id="email" [(ngModel)]="email">
+            <textarea required class="row3" type="text" name="Message" placeholder="Message" id="message" [(ngModel)]="message"></textarea>
             <div class="button-container" matRipple ><button class="send-button" mat-raised-button color="#20BEA7">Send Message</button></div>
           </form>
         </div> 

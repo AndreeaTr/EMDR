@@ -1,6 +1,7 @@
 import { AfterViewChecked, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -25,7 +26,12 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
   contactsrc = "assets/img/social-media-2786261_1920.jpg";
 
 
-  constructor(private router:Router, private activeRoute: ActivatedRoute, private location: Location) { }
+  constructor(private router:Router, private activeRoute: ActivatedRoute, private location: Location, private http: HttpClient) { }
+
+  username: String;
+  phonenumber: String;
+  email: String;
+  message: String;
 
   ngOnInit() {
   
@@ -75,5 +81,26 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
   {
     // console.log(section);
     section.scrollIntoView({behavior:"smooth", block:'start'});
+  }
+
+
+  formValidation(){
+    console.log(this.username, this.phonenumber, this.email, this.message);
+    this.sendEmail(this.username, this.phonenumber, this.email, this.message);
+  }
+
+  sendEmail(username, phonenumber, email, message) {
+
+    const headers = {"Content-Type":"application/json"}
+
+    this.http.post("http://127.0.0.1:5000/test", {username: username, phonenumber: phonenumber, email: email, message: message}, {headers:headers, observe:"response"}).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (err) => {
+        console.log("opa");
+        console.log(err);
+      });
+
   }
 }
