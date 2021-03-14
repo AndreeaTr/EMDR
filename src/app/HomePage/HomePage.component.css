@@ -493,6 +493,16 @@
     cursor: pointer;
 }
 
+.form-bottom {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.error {
+    color: #cc0000;
+    padding-left: 1vw;
+}
+
 
 
 

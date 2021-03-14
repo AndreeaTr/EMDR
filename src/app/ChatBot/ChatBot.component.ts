@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewChecked, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ChatBot',
@@ -12,7 +13,7 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
 
   @ViewChild('chatMessages') private chatMessagesContainer: ElementRef;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -41,6 +42,13 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
     try {
       this.chatMessagesContainer.nativeElement.scrollTop = this.chatMessagesContainer.nativeElement.scrollHeight;
     } catch(err) {}
+  }
+
+
+  navTo(section: string)
+  {
+    sessionStorage.setItem("scrollTo", section);
+    this.router.navigate(["/"]);
   }
 
 }

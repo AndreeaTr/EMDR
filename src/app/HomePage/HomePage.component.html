@@ -150,7 +150,14 @@
             </div>
             <input required class="row2" type="text" name="Email" placeholder="Email" id="email" [(ngModel)]="email">
             <textarea required class="row3" type="text" name="Message" placeholder="Message" id="message" [(ngModel)]="message"></textarea>
-            <div class="button-container" matRipple ><button class="send-button" mat-raised-button color="#20BEA7">Send Message</button></div>
+            <div class="form-bottom">
+              <div>
+                <p class="error">Please fill in all fields!</p>
+                <!-- <p *ngIf="" class="successful-mail">Mail sent succesfully!</p> -->
+              </div>
+              <div class="button-container" matRipple ><button class="send-button" mat-raised-button color="#20BEA7">Send Message</button></div>
+            </div>
+            
           </form>
         </div> 
 

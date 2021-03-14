@@ -34,40 +34,64 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
   message: String;
 
   ngOnInit() {
-  
+      
   }
 
   ngAfterViewChecked()
   {
-    if(!this.navigated)
-    {
-      this.navigated = true;
-      // console.log(this.therapyAnchor);
-      this.activeRoute.queryParams.subscribe(params => {
-        // console.log(params['section']);
-        if(params['section'] === "therapy")
-        {
-          this.navTo(this.therapyAnchor.nativeElement);
-        }
+    // if(!this.navigated)
+    // {
+    //   this.navigated = true;
+    //   // console.log(this.therapyAnchor);
+    //   this.activeRoute.queryParams.subscribe(params => {
+    //     // console.log(params['section']);
+    //     if(params['section'] === "therapy")
+    //     {
+    //       this.navTo(this.therapyAnchor.nativeElement);
+    //     }
 
-        if(params['section'] === "help")
-        {
-          this.navTo(this.helpAnchor.nativeElement);
-        }
+    //     if(params['section'] === "help")
+    //     {
+    //       this.navTo(this.helpAnchor.nativeElement);
+    //     }
 
-        if(params['section'] === "faqs")
-        {
-          this.navTo(this.faqsAnchor.nativeElement);
-        }
+    //     if(params['section'] === "faqs")
+    //     {
+    //       this.navTo(this.faqsAnchor.nativeElement);
+    //     }
 
-        if(params['section'] === "contact")
-        {
-          this.navTo(this.contactAnchor.nativeElement);
-        }
-      });
-      // this.location.replaceState('/');
+    //     if(params['section'] === "contact")
+    //     {
+    //       this.navTo(this.contactAnchor.nativeElement);
+    //     }
+    //   });
+    //   // this.location.replaceState('/');
 
-    }
+    // }
+    setTimeout(() => {
+      if(sessionStorage.getItem("scrollTo"))
+      {
+        switch(sessionStorage.getItem("scrollTo")){
+          case "therapy":
+            this.navTo(this.therapyAnchor.nativeElement);
+            break;
+
+          case "help":
+            this.navTo(this.helpAnchor.nativeElement);  
+            break;
+
+          case "faqs":
+            this.navTo(this.faqsAnchor.nativeElement);  
+            break;  
+
+          case "contact":
+            this.navTo(this.contactAnchor.nativeElement);  
+            break;  
+        }
+        sessionStorage.removeItem("scrollTo");
+      }
+    }, 100)
+    
   }
 
 
