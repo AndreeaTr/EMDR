@@ -43,17 +43,19 @@ export class TherapyPageComponent implements OnInit {
   }
 
   closeFullscreen() {
-    if (this.document.exitFullscreen) {
-      this.document.exitFullscreen();
-    } else if (this.document.mozCancelFullScreen) {
-      /* Firefox */
-      this.document.mozCancelFullScreen();
-    } else if (this.document.webkitExitFullscreen) {
-      /* Chrome, Safari and Opera */
-      this.document.webkitExitFullscreen();
-    } else if (this.document.msExitFullscreen) {
-      /* IE/Edge */
-      this.document.msExitFullscreen();
+    if(document.fullscreenElement){
+      if (this.document.exitFullscreen) {
+        this.document.exitFullscreen();
+      } else if (this.document.mozCancelFullScreen) {
+        /* Firefox */
+        this.document.mozCancelFullScreen();
+      } else if (this.document.webkitExitFullscreen) {
+        /* Chrome, Safari and Opera */
+        this.document.webkitExitFullscreen();
+      } else if (this.document.msExitFullscreen) {
+        /* IE/Edge */
+        this.document.msExitFullscreen();
+      }
     }
   }
 

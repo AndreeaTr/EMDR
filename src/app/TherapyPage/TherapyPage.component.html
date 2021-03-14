@@ -9,31 +9,6 @@
 </div>  
 
 
-<!-- Close modal -->
-
-<div *ngIf="showDialogue" class="dialogue-backdrop">
-  <div class = "dialogue">
-    <p class ="dialogue-text">Do you wish to end your session?</p>
-      <div class="dialogue-button-container">
-        <button routerLink="/chat" (click)="closeFullscreen()" class="dialogue-button margin-right">Yes</button>
-        <button (click)="closedialogue()" class="dialogue-button margin-left">No</button>
-      </div>
-    </div> 
-</div>
-
-
-<!-- Session finished modal -->
-
-<div *ngIf="sessionEnded" class="dialogue-backdrop">
-  <div class = "dialogue">
-    <p class ="dialogue-text">Your therapy session is completed!</p>
-      <div class="dialogue-button-container">
-        <button routerLink="/chat" (click)="closeFullscreen()" class="dialogue-button margin-right">Okay</button>
-      </div>
-    </div> 
-</div>
-
-
 <!-- Buttons + Timer Footer -->
 
 <div [ngStyle]="{'opacity': showFooter}" class="buttons-container">
@@ -59,7 +34,34 @@
   </div>
   <div matRipple><button (click)="showdialogue()" class="button" mat-raised-button color="#20BEA7"><span class="material-icons">close</span></button></div>
 
+
    
 </div>
+
+
+<!-- Close modal -->
+
+<div *ngIf="showDialogue" class="dialogue-backdrop">
+  <div class = "dialogue">
+    <p class ="dialogue-text">Do you wish to end your session?</p>
+      <div class="dialogue-button-container">
+        <button routerLink="/chat" (click)="closeFullscreen()" class="dialogue-button margin-right">Yes</button>
+        <button (click)="closedialogue()" class="dialogue-button margin-left">No</button>
+      </div>
+    </div> 
+</div>
+
+
+<!-- Session finished modal -->
+
+<div *ngIf="sessionEnded" class="dialogue-backdrop">
+  <div class = "dialogue">
+    <p class ="dialogue-text">Your therapy session is completed!</p>
+      <div class="dialogue-button-container">
+        <button routerLink="/chat" (click)="closeFullscreen()" class="dialogue-button margin-right">Okay</button>
+      </div>
+    </div> 
+</div>
+
 
   

@@ -92,7 +92,7 @@
 
 
     <form (ngSubmit)="sendMessage()" class="message-bar">
-      <input id="input" placeholder="Type something here..." autocomplete="off" [(ngModel)]="message" name="message"/>
+      <input id="input" placeholder="Type something here..." autocomplete="off" [disabled]="isDisabled" [(ngModel)]="message" name="message"/>
       <button id="send"><span class="material-icons">
         send
       </span></button>
