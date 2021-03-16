@@ -2,6 +2,7 @@ import { AfterViewChecked, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { send } from 'process';
 
 
 @Component({
@@ -28,10 +29,18 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   constructor(private router:Router, private activeRoute: ActivatedRoute, private location: Location, private http: HttpClient) { }
 
-  username: String;
-  phonenumber: String;
-  email: String;
-  message: String;
+  username: string="";
+  phonenumber: string="";
+  email: string="";
+  message: string="";
+  buttonClicked: boolean;
+  formError: string="";
+
+  usernameErr: string="rgba(196, 196, 196, 0.3)";
+  phoneErr: string="rgba(196, 196, 196, 0.3)";
+  mailErr: string="rgba(196, 196, 196, 0.3)";
+  messageErr: string="rgba(196, 196, 196, 0.3)";
+
 
   ngOnInit() {
       
@@ -39,35 +48,6 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   ngAfterViewChecked()
   {
-    // if(!this.navigated)
-    // {
-    //   this.navigated = true;
-    //   // console.log(this.therapyAnchor);
-    //   this.activeRoute.queryParams.subscribe(params => {
-    //     // console.log(params['section']);
-    //     if(params['section'] === "therapy")
-    //     {
-    //       this.navTo(this.therapyAnchor.nativeElement);
-    //     }
-
-    //     if(params['section'] === "help")
-    //     {
-    //       this.navTo(this.helpAnchor.nativeElement);
-    //     }
-
-    //     if(params['section'] === "faqs")
-    //     {
-    //       this.navTo(this.faqsAnchor.nativeElement);
-    //     }
-
-    //     if(params['section'] === "contact")
-    //     {
-    //       this.navTo(this.contactAnchor.nativeElement);
-    //     }
-    //   });
-    //   // this.location.replaceState('/');
-
-    // }
     setTimeout(() => {
       if(sessionStorage.getItem("scrollTo"))
       {
@@ -103,28 +83,98 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   navTo(section:HTMLElement)
   {
-    // console.log(section);
     section.scrollIntoView({behavior:"smooth", block:'start'});
   }
 
 
   formValidation(){
+    this.formError = "";
     console.log(this.username, this.phonenumber, this.email, this.message);
-    this.sendEmail(this.username, this.phonenumber, this.email, this.message);
+    this.buttonClicked = true;
+    if(this.message && this.message.trim().length != 0 && this.username && this.username.trim().length != 0 && this.email && this.email.trim().length != 0 && this.phonenumber && this.phonenumber.trim().length != 0)
+    {
+      this.ResetFormBorder();
+      this.ValidateEmail();
+    } 
+    else
+    { 
+      this.verifyFields();
+      this.formError = "Please fill in all fields";
+    }
   }
 
   sendEmail(username, phonenumber, email, message) {
 
     const headers = {"Content-Type":"application/json"}
 
-    this.http.post("http://127.0.0.1:5000/test", {username: username, phonenumber: phonenumber, email: email, message: message}, {headers:headers, observe:"response"}).subscribe(
+    this.http.post("http://127.0.0.1:5000/sendemail", {username: username, phonenumber: phonenumber, email: email, message: message}, {headers:headers, observe:"response"}).subscribe(
       (response) => {
         console.log(response);
+        this.formError = "";
       },
       (err) => {
-        console.log("opa");
         console.log(err);
+        this.formError = "Something went wrong!";
       });
 
   }
+
+
+
+  ValidateEmail() 
+  {
+      if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.email))
+      {
+        this.sendEmail(this.username, this.phonenumber, this.email, this.message);
+        this.mailErr ="rgba(196, 196, 196, 0.3)";
+
+      } 
+      else 
+      {
+        this.formError = "You have entered an invalid email address!";
+        this.mailErr = "#cc0000";
+      }
+  }
+
+
+  verifyFields()
+  {
+    if(!this.message && this.message.trim().length == 0)
+      {
+          this.messageErr = "#cc0000";
+      }
+      else
+          this.messageErr = "rgba(196, 196, 196, 0.3)";
+
+    if(!this.username && this.username.trim().length == 0)
+    {
+        this.usernameErr = "#cc0000";
+    }
+    else
+          this.usernameErr = "rgba(196, 196, 196, 0.3)";
+    
+    if(!this.email && this.email.trim().length == 0)
+    {
+        this.mailErr = "#cc0000";
+    }
+    else
+          this.mailErr = "rgba(196, 196, 196, 0.3)";
+
+    if(!this.phonenumber && this.phonenumber.trim().length == 0)
+    {
+        this.phoneErr = "#cc0000";
+    }
+    else
+          this.phoneErr = "rgba(196, 196, 196, 0.3)";
+
+  }
+
+  ResetFormBorder(){
+    this.usernameErr = "rgba(196, 196, 196, 0.3)";
+    this.phoneErr ="rgba(196, 196, 196, 0.3)";
+    this.mailErr ="rgba(196, 196, 196, 0.3)";
+    this.messageErr = "rgba(196, 196, 196, 0.3)";
+  }
+
 }
+
