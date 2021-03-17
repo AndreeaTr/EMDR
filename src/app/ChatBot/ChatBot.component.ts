@@ -83,6 +83,7 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
             this.messages.shift();
             this.messages.pop();
             console.log("data sent to baby", this.messages);
+            this.sendMessagesArray();
             sessionStorage.removeItem("messages");
             sessionStorage.removeItem("botMessages");
             sessionStorage.removeItem("questionIndex");
@@ -118,14 +119,23 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
   getBotMessages() {
     this.http.get("http://127.0.0.1:5000/chatbotENG", {observe: 'response'}).subscribe(
       (response) => {
-        // console.log(response);
-        // console.log(response.body["intrebari_eng"]);
         this.botMessages = response.body["intrebari_eng"];
         this.botMessages.push(this.goodbyeMessage);
         this.messages.push({message: this.botMessages.shift(), sender: "bot"});
       },
       (err) => {
+        console.log(err);
+      }
+      );
+  }
 
+  sendMessagesArray() {
+    this.http.post("http://127.0.0.1:5000//chatbotAns", this.messages, {observe: 'response'}).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (err) => {
+        console.log(err);
       }
       );
   }
