@@ -16,6 +16,7 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
   questionIndex;
   goodbyeMessage = "Thank you for your time! We are currently processing your answers. Please wait a few moments until you are redirected on the Home Page. Do not leave this page until then.";
   isDisabled;
+  consent: boolean;
 
   @ViewChild('chatMessages') private chatMessagesContainer: ElementRef;
 
@@ -56,6 +57,16 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
       this.messages.push(botMessage);
       this.questionIndex++;
 
+      if(this.questionIndex == 4)
+      {
+        console.log(this.message);
+        if(this.message.toLowerCase() === "yes")
+        {
+          sessionStorage.setItem('consent', JSON.stringify(this.consent));
+          
+        }
+        
+      }
 
       if(this.questionIndex == 11)
       {
@@ -82,8 +93,14 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
           () => {
             this.messages.shift();
             this.messages.pop();
-            console.log("data sent to baby", this.messages);
-            this.sendMessagesArray();
+
+            if(sessionStorage.getItem('consent'))
+            {
+              console.log("data sent to baby", this.messages);
+              this.sendMessagesArray();
+              sessionStorage.removeItem('consent');
+            }
+          
             sessionStorage.removeItem("messages");
             sessionStorage.removeItem("botMessages");
             sessionStorage.removeItem("questionIndex");
