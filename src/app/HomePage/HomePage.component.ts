@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   navigated = false;
 
-  herosrc = "assets/img/hero-photo.png";
+  herosrc = "assets/img/hero-photo.jpg";
   descsrc = "assets/img/anchor-lee-kO1G3neRA2o-unsplash.jpg";
   card1src = "assets/img/stephanie-liverani-Zz5LQe-VSMY-unsplash.jpg";
   card2src = "assets/img/timothy-ayegbede-MCrBXiMskNE-unsplash.jpg";
