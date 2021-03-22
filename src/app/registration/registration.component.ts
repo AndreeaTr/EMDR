@@ -31,7 +31,7 @@ export class RegistrationComponent implements OnInit {
       'lastName': new FormControl('', {validators: [Validators.required]}),
       'bday': new FormControl('', {validators: [Validators.required]}),
       'gender': new FormControl('', {validators: [Validators.required]}),
-      'email': new FormControl('', {validators: [Validators.required]}),
+      'email': new FormControl('', {validators: [Validators.required,Validators.email]}),
       'phnb': new FormControl('', {validators: [Validators.required]}),
       'pcode': new FormControl('', {validators: [Validators.required]}),
       'country': new FormControl('', {validators: [Validators.required]}),
@@ -39,8 +39,11 @@ export class RegistrationComponent implements OnInit {
       'repeatPassword': new FormControl('', {validators: [Validators.required]})
     })
     //
+
+    console.log(this.registrationForm.get("email"));
   }
 
+  get email() {return this.registrationForm.get("email")}
 
   register()
   {

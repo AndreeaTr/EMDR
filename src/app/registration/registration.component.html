@@ -13,35 +13,27 @@
             <div class="inp">
               <input type="text" name="firstName" formControlName="firstName" placeholder="First name" id="firstName" autofocus required>
             </div>
-
             <div class="inp">
               <input type="text" name="bday" formControlName="bday" placeholder="Date of Birth" id="bday" required>
             </div>
-
-
             <div class="inp">
               <input type="email" name="email" formControlName="email" placeholder="Email" id="email" required>
             </div>
-
             <div class="inp">
               <input type="text" name="pcode" formControlName="pcode" placeholder="Postal Code" id="pcode" required>
             </div>
-
             <div class ="inp">
               <input type="password" name="password" formControlName="password" placeholder="Password" id="password" [type]="hide ? 'password' : 'text'" required>
               <button type="button" mat-icon-button matSuffix (click)="hide = !hide" id="eye_button" >
                 <mat-icon id="eye_icon">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
             </div>
-
           </div> 
 
           <div class="upper-register-right">
-
             <div class="inp">
               <input type="text" name="lastName" formControlName="lastName" placeholder="Last name" id="lastName" required>
             </div>
-
             <div class="inp">
               <select class="book-param" formControlName="gender" required>
                 <option selected value="" disabled hidden >Gender</option>
@@ -50,15 +42,12 @@
                 <option value="Other">Other</option>
               </select>
             </div>
-
             <div class="inp">
               <input type="text" name="phnb" formControlName="phnb" placeholder="Phone Number" id="phnb" required>
             </div>
-
             <div class="inp">
               <input type="text" name="country" formControlName="country" placeholder="Country" id="country" required>
             </div>
-
             <div class="inp">
               <input type="password" name="repeatPassword" formControlName="repeatPassword" placeholder="Confirm password" id="repeatPassword" [type]="hide ? 'password' : 'text'" required>
             </div>

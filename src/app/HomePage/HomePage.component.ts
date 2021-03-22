@@ -107,7 +107,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
     const headers = {"Content-Type":"application/json"}
 
-    this.http.post("http://127.0.0.1:5000/sendemail", {username: username, phonenumber: phonenumber, email: email, message: message}, {headers:headers, observe:"response"}).subscribe(
+    this.http.post("0", {username: username, phonenumber: phonenumber, email: email, message: message}, {headers:headers, observe:"response"}).subscribe(
       (response) => {
         console.log(response);
         this.formError = "";
