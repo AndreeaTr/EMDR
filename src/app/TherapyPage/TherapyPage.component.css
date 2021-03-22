@@ -132,4 +132,36 @@
     color: #e6e6e6;
 }
 
+  
+.timeselector-container {
+min-height: 50px;
+width: 50px;
+display: inline-flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: blue;
+}
+
+.value {
+height: 27px;
+width: 100%;
+border:none;
+outline:none;
+text-align: center;
+}
+
+.plus {
+border: none;
+height: 30px;
+width: 100%;
+}
+
+.plus-container {
+width: 100%;
+}
+
+.rotate {
+transform: scaleY(-1);
+}
 

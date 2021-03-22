@@ -44,8 +44,33 @@
   <div class = "dialogue">
     <p class ="dialogue-text">Please select the duration of your session</p>
       <div class="dialogue-button-container">
-        <input type="number" [(ngModel)]="minutes" class="scale" min="2" max="10" step="1"> <p style="margin:0.5vw">: </p>
-        <input type="number" [(ngModel)]="seconds" class="scale" min="0" max="30" step="30"/>        
+    
+          <div class="timeselector-container">
+            <div class="plus-container">
+              <button (click)="minutesUp()" class="plus"><span class="material-icons">keyboard_arrow_up</span></button>
+            </div> 
+              <div class="value-container">
+                <input [(ngModel)]="minutes" class="value" type="text"/>
+              </div>   
+            <div class="plus-container">
+              <button (click)="minutesDown()" class="plus"><span class="material-icons">keyboard_arrow_down</span></button>
+            </div>
+          </div>  
+
+          <span style="padding: 0.5vw;">:</span>
+
+          <div class="timeselector-container">
+            <div class="plus-container">
+              <button (click)="secondsUp()" class="plus"><span class="material-icons">keyboard_arrow_up</span></button>
+            </div> 
+              <div class="value-container">
+                <input [(ngModel)]="seconds" class="value" type="text"/>
+              </div>   
+            <div class="plus-container">
+              <button (click)="secondsDown()" class="plus"><span class="material-icons">keyboard_arrow_down</span></button>
+            </div>
+          </div>  
+
        </div>
        <div class="start"><button (click)="beginSession()" class="dialogue-button">Begin Session!</button></div>
   </div> 

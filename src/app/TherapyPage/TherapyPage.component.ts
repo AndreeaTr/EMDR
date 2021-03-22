@@ -172,6 +172,47 @@ export class TherapyPageComponent implements OnInit {
     this.toggle();
     this.startDialogue = false;
   }
+
+
+  minutesUp() {
+    if(this.minutes < 10)
+    {
+      this.minutes += 1;
+    }
+  }
+
+  minutesDown() {
+    if(this.minutes > 2)
+    {
+      this.minutes -= 1;
+    }
+  } 
+
+  secondsUp(){
+
+    if(this.seconds==30)
+    {
+      this.seconds = 0;
+      this.minutesUp();
+    }
+    else if(this.minutes <10)
+    {
+      this.seconds += 30;
+    }
+
+  }
+
+  secondsDown() {
+    if(this.seconds==0 && this.minutes > 2)
+    {
+      this.seconds += 30;
+      this.minutesDown();
+    }
+    else
+    {
+      this.seconds = 0;
+    }
+  }
   
 }
 
