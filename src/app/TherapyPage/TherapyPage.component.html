@@ -38,6 +38,18 @@
    
 </div>
 
+<!-- Start modal -->
+
+<div *ngIf="startDialogue" class="dialogue-backdrop">
+  <div class = "dialogue">
+    <p class ="dialogue-text">Please select the duration of your session</p>
+      <div class="dialogue-button-container">
+        <input type="number" [(ngModel)]="minutes" class="scale" min="2" max="10" step="1"> <p style="margin:0.5vw">: </p>
+        <input type="number" [(ngModel)]="seconds" class="scale" min="0" max="30" step="30"/>        
+       </div>
+       <div class="start"><button (click)="beginSession()" class="dialogue-button">Begin Session!</button></div>
+  </div> 
+</div> 
 
 <!-- Close modal -->
 

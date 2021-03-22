@@ -13,13 +13,16 @@ export class TherapyPageComponent implements OnInit {
   showDialogue = false;
   elem;
   fullscreen = false;
-  minutes = 0;
-  seconds = 10;
+  minutes = 2;
+  seconds = 0;
+  initialMinutes;
+  initialSeconds;
   sessionStarted = false;
   timer;
   sessionEnded = false;
   showFooter = 1;
   hideButtons;
+  startDialogue = true;
 
   constructor(@Inject(DOCUMENT) private document: any) {}
 
@@ -126,8 +129,8 @@ export class TherapyPageComponent implements OnInit {
       clearInterval(this.timer);
     }
 
-    this.minutes = 45;
-    this.seconds = 0;
+    this.minutes = this.initialMinutes;
+    this.seconds = this.initialSeconds;
     this.sessionStarted = false;
     this.ballstate = "paused";
     this.moving = false;
@@ -159,6 +162,15 @@ export class TherapyPageComponent implements OnInit {
             this.showFooter = 0;
           }, 3000);
         }  
+  }
+
+  beginSession()
+  {
+    this.initialMinutes = this.minutes;
+    this.initialSeconds = this.seconds;
+
+    this.toggle();
+    this.startDialogue = false;
   }
   
 }
