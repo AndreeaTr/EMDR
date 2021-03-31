@@ -7,14 +7,14 @@
       <img class="logo" src="assets/img/emdr logo monochrome white.svg" alt="EMDR therapy logo"/>
 
 
-      <form class="form-body" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+      <form class="form-body" [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="new-password">
 
         <div class="upper-login">
           <div class="inp">
-            <input type="text" name="username" formControlName="username" placeholder="Email" id="username" autofocus required>
+            <input type="text" name="email" formControlName="email" placeholder="Email" id="username" autofocus required>
           </div>
           <div class ="inp">
-            <input type="password" name="password" formControlName="password" placeholder="Password" id="password" [type]="hide ? 'password' : 'text'" required>
+            <input type="password" name="password" formControlName="password"  autocomplete="new-password" placeholder="Password" id="password" [type]="hide ? 'password' : 'text'" required>
             <button type="button" mat-icon-button matSuffix (click)="hide = !hide" id="eye_button" >
               <mat-icon id="eye_icon">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
@@ -23,28 +23,13 @@
 
         <div class="lower-login">
 
-          <div class="login-error" *ngIf="loginError">Invalid username or password.</div>
-          <!-- <div class="login-error" *ngIf="(username.invalid && (username.dirty || username.touched))
-                                           && password.invalid && (password.dirty || password.touched); else elseBlock">
-                                          Username and password are required.</div>
+          <div class="login-error" *ngIf="loginError">{{loginError}}</div>
 
-          <ng-template #elseBlock>
-            <div class="login-error" *ngIf="username.invalid && (username.dirty || username.touched)">Username is required.</div>
-            <div class="login-error" *ngIf="password.invalid && (password.dirty || password.touched)">Password is required.</div>
-          </ng-template> -->
-
-          <!-- <button id="Connect" *ngIf="!isClicked" mat-raised-button color="darkGreen" type="submit" [disabled]="!loginForm.valid">Connect</button> -->
-
-          <button id="Connect" *ngIf="!isClicked" mat-raised-button color="darkGreen" type="submit" >Login!</button>
-          <mat-spinner [diameter]="50" *ngIf="isClicked"></mat-spinner>
-
+          <button id="Connect" mat-raised-button color="darkGreen" type="submit" >Login!</button>
+          <!-- <mat-spinner [diameter]="50" *ngIf="isClicked"></mat-spinner> -->
         </div>
       </form>
 
-<!-- 
-      <div class="forpass">
-        <a href="#"> Forgot Password ?</a>
-      </div> -->
 
       <div class="new-us">
         <a routerLink='/registration'>Not a member yet? Sign Up!</a>

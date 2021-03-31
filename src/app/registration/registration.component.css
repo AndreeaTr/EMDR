@@ -1,3 +1,7 @@
+::ng-deep select[_ngcontent*] {
+  background-position-x: 95% !important;
+}
+
 .register-page {
   display: flex;
   justify-content: center;
@@ -9,13 +13,13 @@
   background-color:#20BEA7;
   border-radius: 23px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width:650px;
-  height:550px;
+  width: 50%;
   display:flex;
   flex-direction: column;
   justify-content:center;
   align-items:center;
   position: relative;
+  padding: 30px;
 }
 
 .logo {
@@ -25,37 +29,19 @@
   bottom:22px;
   font-family: Arial, Helvetica, sans-serif; */
 
-  width: 20%;
+  width: 22%;
+  padding: 20px 0px;
 }
 
-
-
-.register-card {
-  display:flex;
-  justify-content: space-between;
-  flex-direction: column;
-  height:670px;
-}
-
-.register-card a {
-  text-decoration: none;
-  color: white;
-}
-
-.register-card a:hover {
-  text-decoration: underline;
-}
 
 .form-body {
-  width:650px;
-  height: 400px;
+  width: calc(100% - 60px);
   display: flex;
   flex-direction: column;
   align-items:center;
   justify-content: space-around;
   position: relative;
   top: 25px;
-
 }
 
 .upper-register {
@@ -63,69 +49,89 @@
   flex-direction: row;
   justify-content:space-around;
   align-items:center;
-  width:550px;
-  height:330px;
   position:relative;
-  bottom:15px;
-}
 
-.upper-register-left {
-  display:flex;
-  flex-direction: column;
-  justify-content:space-around;
-  align-items:center;
-  width:250px;
-  height:300px;
-  position:relative;
-}
-
-.upper-register-right {
-  display:flex;
-  flex-direction: column;
-  justify-content:space-around;
-  align-items:center;
-  width:250px;
-  height:300px;
-  position:relative;
 }
 
 .lower-register {
-  height:100px;
-  width:200px;
+  width: 100%;
   display:flex;
   flex-direction: column;
   align-items:center;
-  justify-content: space-around;
+  padding: 10px;
 }
 
 .alr-us{
-  position:absolute;
-  bottom: 4%;
   font-size:13px;
+  color: white;
+  padding-top: 20px;
 }
 
-.inp {
+.submit-button {
+  width: 40%;
+}
+
+.alr-us a{
+  color: white;
+}
+
+.form-row {
   position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.inp-container {
+  width: 49%;
+  position: relative;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 49%;
 }
 
 .inp input:focus {
   outline: none;
 }
 
-#username, #email, #lastName, #firstName, #repeatPassword, #bday, #phnb, #pcode, #country, .book-param{
-  height: 35px;
-  width: 250px;
+.input-style{
+  height: 50px;
+  width: 100%;
   background-color: white;
   border: 1px solid rgba(196, 196, 196, 0.3);
   box-sizing: border-box;
   box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.15);
-  border-radius: 7px;
+  border-radius: 5px;
   padding: 5px;
-  
 }
 
+.error {
+  position: absolute;
+  top: 51px;
+  left: 2px;
+  font-size: small;
+  color: #cc0000;
+}
+
+.bottom-error {
+
+  font-size: medium;
+  color: #cc0000;
+  padding-bottom: 20px;
+}
+
+#password {
+  /* display: flex; */
+  width: 100% !important;
+  height: 50px !important;
+
+}
 
 select {
   -webkit-appearance: none;
@@ -157,14 +163,14 @@ select:invalid option:not(:disabled) { color: rgb(54, 54, 54) }
   border-right:0px;
   box-sizing: border-box;
   box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.15);
-  border-radius: 7px 0px 0px 7px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 #eye_button {
   background-color: white;
-  width:30px;
-  height:35px;
-  border-radius:0px 7px 7px 0px;
+  width:35px;
+  height:50px;
+  border-radius:0px 5px 5px 0px;
   box-shadow: inset 0px 2px 1px rgba(0, 0, 0, 0.15);
 }
 

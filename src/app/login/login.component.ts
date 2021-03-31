@@ -13,66 +13,70 @@ export class LoginComponent implements OnInit {
 
   constructor(private http: HttpClient, private router:Router) {}
   hide = true;
-  loginError: boolean;
+  loginError: string;
   isClicked: boolean;
   loginForm: FormGroup;
 
 
   ngOnInit() {
-    this.loginError = false;
+    this.loginError = "";
     this.isClicked = false;
 
     // REACTIVE-FORM
     this.loginForm = new FormGroup({
-      'username': new FormControl('', {validators: [Validators.required]}),
+      'email': new FormControl('', {validators: [Validators.required, Validators.email]}),
       'password': new FormControl('', {validators: [Validators.required]})
     })
     //
   }
 
-  get username() { return this.loginForm.get('username'); }
-
+  get email() { return this.loginForm.get('email'); }
   get password() { return this.loginForm.get('password'); }
 
   login()
   {
-    console.log('Login works!');
+    if(this.loginForm.valid)
+    {
+      this.isClicked = true;
+
+      const headers = { 'Content-Type':  'application/json' };
+
+      let email = this.loginForm.value["email"];
+      let password = this.loginForm.value["password"];
+
+      const body = {
+
+        "email": email,
+        "password": password,
+
+      };
+      console.log(body);
+
+      this.http.post('http://127.0.0.1:5000/login', body, { 'headers': headers, 'observe': 'response' })
+        .subscribe(
+
+          responseBody =>
+            {
+              // this.router.navigate(["/login"]);
+              console.log(responseBody);
+            },
+
+          err => //Intercepting forbidden status
+            {
+              // this.registrationError = true;
+              // this.isClicked = false;
+              console.log(err);
+            }
+
+        )
+    }
+
+    else {
+      this.loginError = "All fields must be completed";
+    }
+
+
   }
 
-  // login()
-  // {
-  //   this.isClicked = true;
-
-  //   const headers = { 'Content-Type':  'application/json' };
-
-  //   let username = this.loginForm.value["username"];
-  //   let password = this.loginForm.value["password"];
-
-  //   this.http.post('https://virtual-library-system.herokuapp.com/authentication/login', {}, { 'headers': headers, 'observe': 'response' })
-  //     .subscribe(
-
-  //       responseBody =>
-  //         {
-  //           let lst = responseBody.body['jwt'].split(" ");;
-  //           let token = lst[1];
-  //           acc.setToken(token);
-  //           sessionStorage.setItem("token", acc.getToken());
-  //           sessionStorage.setItem("user", acc.getUsername());
-  //           this.router.navigate(["/search-results"]);
-  //         },
-
-  //       err => //Intercepting forbidden status
-  //         {
-  //           this.loginError = true;
-  //           this.isClicked = false;
-  //         },
-
-  //       () =>
-  //         {
-
-  //         }
-  //     )
-
-  // }
 
 }
