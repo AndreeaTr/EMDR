@@ -115,12 +115,12 @@ export class RegistrationComponent implements OnInit {
         };
         console.log(body);
 
-        this.http.post('http://127.0.0.1:5000/register', body, { 'headers': headers, 'observe': 'response' })
+        this.http.post('https://emdr-back-end.herokuapp.com/register', body, { 'headers': headers, 'observe': 'response' })
           .subscribe(
 
             responseBody =>
               {
-                // this.router.navigate(["/login"]);
+                this.router.navigate(["/login"]);
                 console.log(responseBody);
               },
 

@@ -5,8 +5,9 @@
   <div class="topbar">
     <div class="topbar-elements">
       <span>(+40)000 000000</span>
-      <span><a routerLink='/registration'>Sign Up</a></span>
-      <span><a routerLink='/login'>Login</a></span>
+      <span *ngIf="!isLogged"><a routerLink='/registration'>Sign Up</a></span>
+      <span *ngIf="!isLogged"><a routerLink='/login'>Log in</a></span>
+      <span *ngIf="isLogged"><a (click)="logout()">Log Out</a></span>
     </div>
   </div>
 

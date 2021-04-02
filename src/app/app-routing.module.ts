@@ -5,13 +5,14 @@ import { HomePageComponent } from './HomePage/HomePage.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TherapyPageComponent } from './TherapyPage/TherapyPage.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'chat', component: ChatBotComponent},
-  {path: 'therapy', component: TherapyPageComponent},
+  {path: 'chat', component: ChatBotComponent, canActivate:[AuthGuard]},
+  {path: 'therapy', component: TherapyPageComponent,canActivate:[AuthGuard]},
 ];
 
 @NgModule({

@@ -25,6 +25,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
   card2src = "assets/img/timothy-ayegbede-MCrBXiMskNE-unsplash.jpg";
   card3src = "assets/img/michael-dam-mEZ3PoFGs_k-unsplash.jpg";
   contactsrc = "assets/img/social-media-2786261_1920.jpg";
+  isLogged: boolean;
 
 
   constructor(private router:Router, private activeRoute: ActivatedRoute, private location: Location, private http: HttpClient) { }
@@ -43,7 +44,10 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
 
   ngOnInit() {
-      
+      if(sessionStorage.getItem("token"))
+      {
+        this.isLogged = true;
+      }
   }
 
   ngAfterViewChecked()
@@ -174,6 +178,13 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
     this.phoneErr ="rgba(196, 196, 196, 0.3)";
     this.mailErr ="rgba(196, 196, 196, 0.3)";
     this.messageErr = "rgba(196, 196, 196, 0.3)";
+  }
+
+
+  logout() {
+    sessionStorage.removeItem('token');
+    this.isLogged = false;
+    this.router.navigate(["/"]);
   }
 
 }

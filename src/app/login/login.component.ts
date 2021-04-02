@@ -39,31 +39,32 @@ export class LoginComponent implements OnInit {
     {
       this.isClicked = true;
 
-      const headers = { 'Content-Type':  'application/json' };
-
       let email = this.loginForm.value["email"];
       let password = this.loginForm.value["password"];
 
+      const headers = { 'Content-Type':  'application/json', 'Authorization': 'Basic ' + btoa(email + ":" + password)};
+
       const body = {
 
-        "email": email,
-        "password": password,
-
       };
+
+
       console.log(body);
 
-      this.http.post('http://127.0.0.1:5000/login', body, { 'headers': headers, 'observe': 'response' })
+      this.http.post('https://emdr-back-end.herokuapp.com/login', body, { 'headers': headers, 'observe': 'response' })
         .subscribe(
 
           responseBody =>
             {
-              // this.router.navigate(["/login"]);
+              const token = responseBody.body[0]["token"];
+              sessionStorage.setItem('token', token);
+              this.router.navigate(["/"]);
               console.log(responseBody);
             },
 
           err => //Intercepting forbidden status
             {
-              // this.registrationError = true;
+              this.loginError = err.error;
               // this.isClicked = false;
               console.log(err);
             }
@@ -72,11 +73,17 @@ export class LoginComponent implements OnInit {
     }
 
     else {
-      this.loginError = "All fields must be completed";
+      if(this.email.invalid && this.password.valid)
+      {
+        this.loginError = "Please enter a valid email address!";
+      }
+      else 
+      {
+        this.loginError = "All fields must be completed";
+      }
+      
     }
 
-
   }
-
 
 }

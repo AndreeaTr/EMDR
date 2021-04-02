@@ -17,12 +17,20 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
   goodbyeMessage = "Thank you for your time! We are currently processing your answers. Please wait a few moments until you are redirected on the Home Page. Do not leave this page until then.";
   isDisabled;
   consent: boolean;
+  isLogged: boolean;
 
   @ViewChild('chatMessages') private chatMessagesContainer: ElementRef;
 
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
+
+    if(sessionStorage.getItem("token"))
+    {
+      this.isLogged = true;
+    }
+    
+
     if(sessionStorage.getItem('attendedTherapy'))
     {
       this.messages = JSON.parse(sessionStorage.getItem('messages'));
@@ -39,7 +47,7 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
       this.getBotMessages();
       this.messages.push({message: this.welcomeMessage, sender: "bot"});
     }
-    
+
   }
 
   ngAfterViewChecked()
@@ -134,7 +142,7 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
 
 
   getBotMessages() {
-    this.http.get("http://127.0.0.1:5000/chatbotENG", {observe: 'response'}).subscribe(
+    this.http.get("https://emdr-back-end.herokuapp.com/chatbotENG", {observe: 'response'}).subscribe(
       (response) => {
         this.botMessages = response.body["intrebari_eng"];
         this.botMessages.push(this.goodbyeMessage);
@@ -147,7 +155,7 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
   }
 
   sendMessagesArray() {
-    this.http.post("http://127.0.0.1:5000//chatbotAns", this.messages, {observe: 'response'}).subscribe(
+    this.http.post("https://emdr-back-end.herokuapp.com/chatbotAns", this.messages, {observe: 'response'}).subscribe(
       (response) => {
         console.log(response);
       },
@@ -155,6 +163,12 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
         console.log(err);
       }
       );
+  }
+
+  logout() {
+    sessionStorage.removeItem('token');
+    this.isLogged = false;
+    this.router.navigate(["/"]);
   }
 
 }

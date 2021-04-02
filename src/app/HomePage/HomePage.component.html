@@ -8,8 +8,9 @@
   <div class="topbar">
     <div class="topbar-elements">
       <span>(+40)000 000000</span>
-      <span><a routerLink='/registration'>Sign Up</a></span>
-      <span><a routerLink='/login'>Login</a></span>
+      <span *ngIf="!isLogged"><a routerLink='/registration'>Sign Up</a></span>
+      <span *ngIf="!isLogged"><a routerLink='/login'>Log in</a></span>
+      <span *ngIf="isLogged"><a (click)="logout()" routerLink='/'>Log Out</a></span>
     </div>
   </div>
 
@@ -22,7 +23,8 @@
       <span (click)="navTo(faqs)">FAQs</span>
       <span (click)="navTo(contact)">Contact Us</span>
     </div>
-    <div matRipple><button routerLink='/chat' class="start-button" mat-raised-button color="#20BEA7">Start Therapy</button></div>   
+    <div *ngIf="isLogged" matRipple><button routerLink='/chat' class="start-button" mat-raised-button color="#20BEA7">Start Therapy</button></div>
+    <div *ngIf="!isLogged" matRipple><button routerLink='/login' class="start-button" mat-raised-button color="#20BEA7">Start Therapy</button></div>    
   </div>
 </div>
 
