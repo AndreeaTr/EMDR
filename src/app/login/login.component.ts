@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit {
             {
               const token = responseBody.body[0]["token"];
               sessionStorage.setItem('token', token);
+              console.log(sessionStorage.getItem('token'));
               this.router.navigate(["/"]);
               console.log(responseBody);
             },
