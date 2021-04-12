@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { TherapyPageComponent } from './TherapyPage/TherapyPage.component';
 import { AuthGuard } from './auth.guard';
+import { PasswordResetComponent } from './PasswordReset/PasswordReset.component';
+import { EmailComponent } from './Email/email.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'chat', component: ChatBotComponent, canActivate:[AuthGuard]},
   {path: 'therapy', component: TherapyPageComponent,canActivate:[AuthGuard]},
+  {path: 'resetPassword', component: PasswordResetComponent},
+  {path: 'checkEmail', component: EmailComponent}
 ];
 
 @NgModule({

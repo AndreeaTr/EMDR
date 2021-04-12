@@ -148,10 +148,17 @@
   text-align: center;
 }
 
+.forgot-password {
+  font-size:13px;
+}
+
 .new-us{
   position:relative;
   top:40px;
   font-size:13px;
+  flex-direction:column;
+  display:flex;
+  
 }
 
 .footer {

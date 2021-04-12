@@ -25,7 +25,8 @@
 
           <div class="login-error" *ngIf="loginError">{{loginError}}</div>
 
-          <button id="Connect" mat-raised-button color="darkGreen" type="submit" >Login!</button>
+            <button id="Connect" mat-raised-button color="darkGreen" type="submit" >Login!</button>
+            <a class="forgot-password" routerLink='/checkEmail'>Forgot Password?</a>
           <!-- <mat-spinner [diameter]="50" *ngIf="isClicked"></mat-spinner> -->
         </div>
       </form>

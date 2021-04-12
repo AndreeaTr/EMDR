@@ -43,15 +43,19 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ChatBotComponent } from './ChatBot/ChatBot.component';
 import { TherapyPageComponent } from './TherapyPage/TherapyPage.component';
+import { PasswordResetComponent } from './PasswordReset/PasswordReset.component';
+import { EmailComponent } from './Email/email.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [							
     AppComponent,
       HomePageComponent,
       RegistrationComponent,
       LoginComponent,
       ChatBotComponent,
-      TherapyPageComponent
+      TherapyPageComponent,
+      PasswordResetComponent,
+      EmailComponent
    ],
   imports: [
     BrowserModule,

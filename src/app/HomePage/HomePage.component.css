@@ -26,6 +26,7 @@
     -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
     box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
 }
+
 .topbar {
     height: 25px;
     background-color:#f5f5f5;
@@ -120,12 +121,13 @@
 
 
 .animated-motto {
-    height: 30vh;
-    width: 45vw;
+    /* height: 30vh; */
+    width: 40vw;
     background-color: #20BEA7;
     position: absolute;
     bottom: 10vh;
-    border-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
     left:-100%;
     animation-name: slide-right;
     animation-duration: 1s;
@@ -140,13 +142,14 @@
 
 @keyframes slide-right {
     from {left: -40vw;}
-    to {left: -70px;}
+    to {left: 0;}
 }
 
 .motto {
-    font-size: 40px;
-    padding-left: 8vw;
+    font-size: 36px;
     color: white;
+    text-align: center;
+    padding:20px;
 
 }
 
@@ -156,7 +159,7 @@
 
 .therapy-description {
     /* background-image:linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(C:\Users\andre\Desktop\Licenta\EMDR\images\anchor-lee-kO1G3neRA2o-unsplash.jpg) ; */
-    height:700px;
+    min-height:700px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -196,7 +199,6 @@
 
     background-color: #1FB793;
     min-height: 1500px;
-    /* padding: 150px 20vw; */
     padding: 150px 10vw;
     position: relative;
 }
@@ -228,9 +230,8 @@
 .professional-card {
     background-color: white;
     border-radius: 30px;
-    min-height: 420px;
     width: 30%;
-    padding: 0px 32px;
+    padding: 0px 32px 32px 32px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -244,7 +245,7 @@
 
 
 .card-title {
-    padding: 140px 25px 3px 25px !important;
+    padding: 10vw 25px 3px 25px !important;
     color: #4a4a4a;
     font-size: 25px;
     width: 100%;
@@ -548,3 +549,275 @@
     text-decoration: underline !important;
     cursor: pointer;
 }
+
+
+/* Media */
+/* 
+@media only screen and (max-width: 1190px)
+{
+    .motto {
+        font-size: 30px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 1050px)
+{
+    .motto {
+        font-size: 25px;
+    }
+
+    .cards {
+        margin-top: 300px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .professional-card {
+        background-color: white;
+        border-radius: 30px;
+        width: 30%;
+        padding: 0px 18px 18px 18px;
+    }
+    
+    .professional-card h3, p {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    
+    .card-title {
+        font-size: 25px;
+    }
+    
+    .card-title:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .card-description {
+        padding: 10px !important;
+        font-size: 17px;
+        
+    }
+    
+    .card-photo {
+        padding-top: 75%;
+        width: 75%; 
+        border-radius: 50%;
+        z-index: 99999;
+        position: absolute;
+        top: -10vw;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}
+
+
+@media only screen and (max-width: 910px)
+{
+    
+    .nav-elements {
+        font-size: 16px;
+        color: #525252;
+        display: flex;
+        align-items: center;
+        
+    }
+    
+    .nav-elements span{
+        padding: 0px 10px;
+    
+    }
+
+    .start-button{
+        border:none;
+        background-color: #20BEA7;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .logo-top {
+        width: 120px; 
+        margin-right: 10px;
+    }
+
+    
+    .therapy-description {
+        min-height:600px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 10vh 17vw;
+        display: flex;
+        align-items: center;
+        padding-bottom: 60px;
+        position: relative;
+    }
+    
+    .title1 {
+        text-align: center;
+        padding-bottom: 50px;
+        font-weight: 500;
+        font-size: 30px;
+        text-shadow: 2px 2px 2px #525252;
+        color:#4a4a4a;
+        
+    }
+    
+    .description1 {
+        color:  #525252;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    
+}
+
+
+
+
+
+
+@media only screen and (max-width: 820px)
+{
+    .motto {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .animated-motto {
+        border-bottom-right-radius: 40px;
+        border-top-right-radius: 40px;
+        width: 50vw;
+    }
+
+
+    .nav-elements {
+        font-size: 15px;
+        
+    }
+    
+    .nav-elements span{
+        padding: 0px 8px;
+    
+    }
+
+    .start-button{
+        font-size: 16px;
+    }
+
+    .logo-top {
+        width: 100px; 
+        margin-right: 30px;
+    }
+
+
+    .title2 {
+        font-size: 30px; 
+        padding-bottom: 30px;     
+    }
+    
+    .subtitle {
+        color:  #525252;
+        font-size: 20px;
+        text-align: center;
+        color:white;
+        padding: 15px 10px;
+    }
+    
+    .cards {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .professional-card {
+        background-color: white;
+        border-radius: 30px;
+        width: 85%;
+        padding: 0px 32px 32px 32px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 250px;
+    }
+    
+    .professional-card h3, p {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    
+    .card-title {
+        font-size: 25px;
+        padding: 25vw 25px 3px 25px !important;
+    }
+    
+    .card-title:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .card-description {
+        padding: 20px !important;
+        font-size: 25px;
+        
+    }
+    
+    .card-photo {
+        padding-top: 60%;
+        width: 60%; 
+        border-radius: 50%;
+        z-index: 99999;
+        position: absolute;
+        top: -20vw;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}
+
+
+@media only screen and (max-width: 500px)
+{
+    .motto {
+        font-size: 30px;
+    }
+
+    .professional-card {
+        background-color: white;
+        border-radius: 30px;
+        width: 85%;
+        padding: 0px 10px 10px 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 250px;
+    }
+
+    .card-title {
+        font-size: 25px;
+        padding: 25vw 25px 3px 25px !important;
+    }
+    
+    .card-title:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .card-description {
+        padding: 20px !important;
+        font-size: 20px;
+        
+    }
+} */
