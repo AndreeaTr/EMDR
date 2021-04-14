@@ -56,7 +56,7 @@
 }
 
 
-.navbar {
+.logo-bar {
     height: 90px;
     background-color: white;
     display:flex;
@@ -553,7 +553,7 @@
 
 /* Media */
 
-@media only screen and (max-width: 1190px)
+/* @media only screen and (max-width: 1190px)
 {
     .motto {
         font-size: 30px;
@@ -820,4 +820,4 @@
         font-size: 20px;
         
     }
-}
+} */

@@ -4,7 +4,7 @@
 
 <!-- Home -->
 
-<div class="nav-container">
+<div class="nav-container box-shadow-lower fixed-top">
   <div class="topbar">
     <div class="topbar-elements">
       <span>(+40)000 000000</span>
@@ -14,23 +14,44 @@
     </div>
   </div>
 
-  <div class="logo-bar navbar navbar-expand-lg">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="nav-elements">
-      <a class= "a-link" (click)="navTo(home)"><img class="logo-top" src="assets/img/emdr official.svg" alt="EMDR therapy logo"/></a>
-      <span (click)="navTo(home)">Home</span>
-      <span (click)="navTo(therapy)">EMDR Therapy</span>
-      <span (click)="navTo(help)">Professional Help</span>
-      <span (click)="navTo(faqs)">FAQs</span>
-      <span (click)="navTo(contact)">Contact Us</span>
+  <!-- NAVBAR START -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white logo-bar">
+    <div class="container-fluid justify-content-lg-center">
+        <a class= "navbar-brand a-link" (click)="navTo(home)"><img class="logo-top d-inline-block align-text-top mg-2" width="130px" src="assets/img/emdr official.svg" alt="EMDR therapy logo"/></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-lg-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav">  
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo(home)">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo(therapy)">EMDR Therapy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo(help)">Professional Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo(faqs)">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo(contact)">Contact Us</a>
+          </li>
+          <li class="nav-item d-lg-inline-flex align-items-lg-center">
+            <div *ngIf="isLogged" matRipple><button routerLink='/chat' class="start-button" mat-raised-button color="#20BEA7">Start Therapy</button></div>
+            <button *ngIf="!isLogged" routerLink='/login' class="start-button" mat-raised-button color="#20BEA7">Start Therapy</button>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div *ngIf="isLogged" matRipple><button routerLink='/chat' class="start-button" mat-raised-button color="#20BEA7">Start Therapy</button></div>
-    <div *ngIf="!isLogged" matRipple><button routerLink='/login' class="start-button" mat-raised-button color="#20BEA7">Start Therapy</button></div>    
-  </div>
+  </nav>
+  <!-- NAVBAR END -->
+
+
 </div>
 
+<!-- HERO -->
 <div [ngStyle]="{'background-image': 'url(' + herosrc + ')'}" alt="girl with laptop attends EMDR session" class="home-body">
   <div class="animated-motto">
     <h4 class="motto">"Change your life from the comfort of your home"</h4>

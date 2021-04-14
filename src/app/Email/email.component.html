@@ -7,7 +7,7 @@
       <img class="logo" src="assets/img/emdr logo monochrome white.svg" alt="EMDR therapy logo"/>
 
 
-      <form class="form-body" [formGroup]="checkMailForm" (ngSubmit)="reset()" autocomplete="new-password">
+      <form class="form-body" [formGroup]="resetForm" (ngSubmit)="reset()" autocomplete="new-password">
 
         <div class="upper-login">
           <p style="color:white">Please enter your Email Address:</p>
@@ -18,9 +18,10 @@
 
         <div class="lower-login">
 
-          <!-- <div class="login-error" *ngIf="loginError"Email address is not registered</div> -->
+          <div class="login-error" *ngIf="successMsg">{{successMsg}}</div>
+          <div class="login-error" *ngIf="resetError">{{resetError}}</div>
 
-            <button id="Connect" routerLink="/resetPassword" mat-raised-button color="darkGreen" type="submit" >Continue</button>
+            <button id="Connect" mat-raised-button color="darkGreen" type="submit" >Continue</button>
         </div>
       </form>
     </div>  

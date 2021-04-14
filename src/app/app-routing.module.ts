@@ -8,9 +8,11 @@ import { TherapyPageComponent } from './TherapyPage/TherapyPage.component';
 import { AuthGuard } from './auth.guard';
 import { PasswordResetComponent } from './PasswordReset/PasswordReset.component';
 import { EmailComponent } from './Email/email.component';
+import { BootstraphomepageComponent } from './bootstraphomepage/bootstraphomepage.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
+  {path: 'bootstrap', component: BootstraphomepageComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'chat', component: ChatBotComponent, canActivate:[AuthGuard]},

@@ -45,9 +45,10 @@ import { ChatBotComponent } from './ChatBot/ChatBot.component';
 import { TherapyPageComponent } from './TherapyPage/TherapyPage.component';
 import { PasswordResetComponent } from './PasswordReset/PasswordReset.component';
 import { EmailComponent } from './Email/email.component';
+import { BootstraphomepageComponent } from './bootstraphomepage/bootstraphomepage.component';
 
 @NgModule({
-  declarations: [							
+  declarations: [								
     AppComponent,
       HomePageComponent,
       RegistrationComponent,
@@ -55,7 +56,8 @@ import { EmailComponent } from './Email/email.component';
       ChatBotComponent,
       TherapyPageComponent,
       PasswordResetComponent,
-      EmailComponent
+      EmailComponent,
+      BootstraphomepageComponent
    ],
   imports: [
     BrowserModule,

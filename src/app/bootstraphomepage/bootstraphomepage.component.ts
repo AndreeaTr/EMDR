@@ -1,16 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewChecked, Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
-import { Location } from '@angular/common';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { send } from 'process';
-
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-HomePage',
-  templateUrl: './HomePage.component.html',
-  styleUrls: ['./HomePage.component.css']
+  selector: 'app-bootstraphomepage',
+  templateUrl: './bootstraphomepage.component.html',
+  styleUrls: ['./bootstraphomepage.component.css']
 })
-export class HomePageComponent implements OnInit, AfterViewChecked {
+export class BootstraphomepageComponent implements OnInit, AfterViewChecked {
 
   @ViewChild('therapy') therapyAnchor;
   @ViewChild('help') helpAnchor;
@@ -28,7 +25,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
   isLogged: boolean;
 
 
-  constructor(private router:Router, private activeRoute: ActivatedRoute, private location: Location, private http: HttpClient) { }
+  constructor(private router:Router, private http: HttpClient) { }
 
   username: string="";
   phonenumber: string="";
@@ -111,7 +108,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
     const headers = {"Content-Type":"application/json"}
 
-    this.http.post("https://emdr-back-end.herokuapp.com/sendemail", {username: username, phonenumber: phonenumber, email: email, message: message}, {headers:headers, observe:"response"}).subscribe(
+    this.http.post("0", {username: username, phonenumber: phonenumber, email: email, message: message}, {headers:headers, observe:"response"}).subscribe(
       (response) => {
         console.log(response);
         this.formError = "";
