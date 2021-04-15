@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'chat', component: ChatBotComponent, canActivate:[AuthGuard]},
   {path: 'therapy', component: TherapyPageComponent,canActivate:[AuthGuard]},
-  {path: 'resetPassword', component: PasswordResetComponent},
+  {path: 'resetPassword/:token', component: PasswordResetComponent},
   {path: 'checkEmail', component: EmailComponent}
 ];
 

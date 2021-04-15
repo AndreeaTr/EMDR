@@ -52,20 +52,18 @@
 </div>
 
 <!-- HERO -->
-<div [ngStyle]="{'background-image': 'url(' + herosrc + ')'}" alt="girl with laptop attends EMDR session" class="home-body">
+<div [ngStyle]="{'background-image': 'url(' + herosrc + ')'}" alt="girl with laptop attends EMDR session" class="home-body d-flex flex-column align-items-center justify-content-center">
+  <h1 class="tablet-title text-center">EMDR Therapy</h1>
+  <p class="tablet-motto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <button routerLink='/login' class="tablet-start-button start-button" mat-raised-button color="#20BEA7">Start Therapy</button>
   <div class="animated-motto">
-    <h4 class="motto">"Change your life from the comfort of your home"</h4>
+    <h4 class="motto">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</h4>
   </div>
 </div>
 
-
-
-
-
 <!-- EMDR Therapy -->
 
-
-<div [ngStyle]="{'background-image':'linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(' + descsrc + ')'}" alt="soothing texture" class="therapy-description" >
+<div [ngStyle]="{'background-image':'linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(' + descsrc + ')'}" alt="soothing texture" class="therapy-description container-full d-flex align-items-center" >
   <div #therapy class="section-anchor" id="therapyanchor"></div>
     <div class="description-container">
         <div class="title1">How EMDR Therapy cures you</div>
@@ -76,29 +74,36 @@
 
 <!-- Professionals -->
 
-<div class="professionals-container">
+<div class="professionals-container container-full text-center">
   <div #help class="section-anchor"></div>
-    <div class="title2">Seek Help from our Professionals</div>
-    <div class="subtitle">Our team of properly trained professionals is ready to guide you on your healing journey. Don’t hesitate to contact your preferred therapist to discuss details and set up an appointment </div> 
-    <div class="cards">
-      <div class="professional-card col-12 col-md-4">
+    <h2 class="title2">Seek Help from our Professionals</h2>
+    <p class="subtitle">Our team of properly trained professionals is ready to guide you on your healing journey. Don’t hesitate to contact your preferred therapist to discuss details and set up an appointment </p> 
+    <div class="cards row">
+      <div class="col-12 col-lg-4 card-container">
+        <div class="professional-card text-start">
           <h3 class="card-title">Jane Doe</h3>
           <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
           <div [ngStyle]="{'background-image': 'url(' + card1src + ')'}" alt="therapist smiling with kindness" class="card-photo photo1"></div>       
+        </div>       
       </div> 
       
-      <div class="professional-card col-12 col-md-4">
-        <h3 class="card-title">John Doe</h3>
+      <div class="col-12 col-lg-4 card-container">
+        <div class="professional-card text-start">
+          <h3 class="card-title">John Doe</h3>
+          <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
+          <div [ngStyle]="{'background-image': 'url(' + card2src + ')'}" alt="therapist smiling with kindness" class="card-photo photo2"></div>       
+        </div>     
+      </div>
+
+    <div class="col-12 col-lg-4 card-container">
+      <div class="professional-card text-start">
+        <h3 class="card-title">Jane Doe</h3>
         <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
-        <div [ngStyle]="{'background-image': 'url(' + card2src + ')'}" alt="therapist smiling with kindness" class="card-photo photo2"></div>       
+        <div [ngStyle]="{'background-image': 'url(' +card3src + ')'}" alt="therapist smiling with kindness" class="card-photo photo3"></div>       
+      </div>      
     </div>
 
-    <div class="professional-card col-12 col-md-4">
-      <h3 class="card-title">Jane Doe</h3>
-      <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
-      <div [ngStyle]="{'background-image': 'url(' +card3src + ')'}" alt="therapist smiling with kindness" class="card-photo photo3"></div>       
-  </div>
-    </div> 
+  </div> 
 </div> 
 
 
@@ -150,29 +155,20 @@
 
 </div>  
 
-
-
-
-
-
 <!-- Contact -->
-
-<!-- <div class="transition">
-</div>  -->
-
 
 <div class="contact-body">
   <div #contact class="section-anchor"></div>
     <div class="title4">Contact Us</div>
     <div class="subtitle-2">For further details don’t hesitate to contact us and our staff will get back to you with a reply as soon as possible</div>
 
-    <div class="form-container">
-        <div [ngStyle]="{'background-image': 'url(' +contactsrc + ')'}" alt="doodle of a screen surrounded by social media icons" class="contact-image"></div>
-        <div class="contact-form">
+    <div class="form-container row">
+        <div [ngStyle]="{'background-image': 'url(' +contactsrc + ')'}" alt="doodle of a screen surrounded by social media icons" class="contact-image col-12 col-lg-6"></div>
+        <div class="contact-form col-12 col-lg-6">
           <form (ngSubmit)="formValidation()">
-            <div class="form-row1"> 
-              <input [ngStyle]="{'border-color': usernameErr}" required class="row1" type="text" name="username" placeholder="Username" id="username" [(ngModel)]="username">
-              <input [ngStyle]="{'border-color': phoneErr}" required class="row1" type="tel" name="Phone" placeholder="Phone" id="phone" [(ngModel)]="phonenumber">
+            <div class="form-row1 row justify-content-lg-between"> 
+              <input [ngStyle]="{'border-color': usernameErr}" required class="row1 col-12 col-lg-6 margin-bottom-lg-15" type="text" name="username" placeholder="Username" id="username" [(ngModel)]="username">
+              <input [ngStyle]="{'border-color': phoneErr}" required class="row1 col-12 col-lg-6" type="tel" name="Phone" placeholder="Phone" id="phone" [(ngModel)]="phonenumber">
             </div>
             <input [ngStyle]="{'border-color': mailErr}" required class="row2" type="text" name="Email" placeholder="Email" id="email" [(ngModel)]="email">
             <textarea [ngStyle]="{'border-color': messageErr}" required class="row3" type="text" name="Message" placeholder="Message" id="message" [(ngModel)]="message"></textarea>
@@ -195,13 +191,15 @@
 
   <!-- Footer -->
 
-  <div class="footer">
-      <div class="content-left">
-       <a class= "a-link" (click)="navTo(home)"><img class="logo" src="assets/img/emdr official.svg" alt="EMDR therapy logo"/></a>
+  <footer class="footer">
+
+    <div class="row">
+      <div class="content-left col-md-6">
+       <a class="a-link" (click)="navTo(home)"><img class="logo" src="assets/img/emdr official.svg" alt="EMDR therapy logo"/></a>
         <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
       </div>
 
-      <div class="content-middle">
+      <div class="content-middle col-md-3">
           <a (click)="navTo(home)" class="footer-link">Home</a>
           <a (click)="navTo(therapy)" class="footer-link">EMDR Therapy</a>
           <a (click)="navTo(help)" class="footer-link">Professional Help</a>
@@ -209,10 +207,11 @@
           <a (click)="navTo(contact)" class="footer-link">Contact Us</a>
       </div>
 
-      <div class="content-right">
+      <div class="content-right col-md-3">
         <a class="footer-link" href="tel:+403-452-63556">(+40) 345 263556</a>
         <a class="footer-link" href="tel:+403-452-63556">(+40) 345 263556</a>
         <a class="footer-link" href="mailto:email@mail.com">email@mail.com</a>
       </div>   
+    </div>
 
-  </div>
+  </footer>
