@@ -22,6 +22,7 @@ export class RegistrationComponent implements OnInit {
   today = new Date();
   inptype = 'text';
   errorMsg = "";
+  successMsg = "";
   passnotmatching:boolean = false;
 
   emailclick: boolean = false;
@@ -120,7 +121,7 @@ export class RegistrationComponent implements OnInit {
 
             responseBody =>
               {
-                this.router.navigate(["/login"]);
+                this.successMsg = "Activation email sent successfully. Please check your inbox!"
                 console.log(responseBody);
               },
 
