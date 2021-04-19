@@ -51,12 +51,12 @@ export class PasswordResetComponent implements OnInit {
       if(newPassword == confPassword)
       {
         this.passError = "";
-        this.http.put('https://emdr-back-end.herokuapp.com/reset_password/' + this.tkn , body, { 'headers': headers, 'observe': 'response' })
+        this.http.put('https://emdr-back-end.herokuapp.com/resetPassword/' + this.tkn , body, { 'headers': headers, 'observe': 'response' })
         .subscribe(
 
           responseBody =>
             {
-              this.successMsg = "Your Password has been reset successfully"
+              this.successMsg = "Your Password has been reset successfully";
             },
 
           err => //Intercepting forbidden status
