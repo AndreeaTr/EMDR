@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-PasswordReset',
@@ -15,7 +15,7 @@ export class PasswordResetComponent implements OnInit {
   passError: string;
   tkn: string;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.ResetPasswordForm = new FormGroup({
@@ -57,7 +57,8 @@ export class PasswordResetComponent implements OnInit {
           responseBody =>
             {
               console.log(responseBody);
-              this.successMsg = "Your Password has been reset successfully";
+              this.successMsg = "Your Password has been reset successfully";  
+              this.router.navigate(['/login']);            
             },
 
           err => //Intercepting forbidden status
