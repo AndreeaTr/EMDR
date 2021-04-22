@@ -9,6 +9,7 @@ import { AuthGuard } from './auth.guard';
 import { PasswordResetComponent } from './PasswordReset/PasswordReset.component';
 import { EmailComponent } from './Email/email.component';
 import { BootstraphomepageComponent } from './bootstraphomepage/bootstraphomepage.component';
+import { AccountActivatedComponent } from './AccountActivated/AccountActivated.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'chat', component: ChatBotComponent, canActivate:[AuthGuard]},
   {path: 'therapy', component: TherapyPageComponent,canActivate:[AuthGuard]},
   {path: 'resetPassword/:token', component: PasswordResetComponent},
-  {path: 'checkEmail', component: EmailComponent}
+  {path: 'checkEmail', component: EmailComponent},
+  {path: 'accountActivated/:token', component: AccountActivatedComponent},
 ];
 
 @NgModule({

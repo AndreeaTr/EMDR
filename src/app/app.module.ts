@@ -46,9 +46,10 @@ import { TherapyPageComponent } from './TherapyPage/TherapyPage.component';
 import { PasswordResetComponent } from './PasswordReset/PasswordReset.component';
 import { EmailComponent } from './Email/email.component';
 import { BootstraphomepageComponent } from './bootstraphomepage/bootstraphomepage.component';
+import { AccountActivatedComponent } from './AccountActivated/AccountActivated.component';
 
 @NgModule({
-  declarations: [								
+  declarations: [									
     AppComponent,
       HomePageComponent,
       RegistrationComponent,
@@ -57,7 +58,8 @@ import { BootstraphomepageComponent } from './bootstraphomepage/bootstraphomepag
       TherapyPageComponent,
       PasswordResetComponent,
       EmailComponent,
-      BootstraphomepageComponent
+      BootstraphomepageComponent,
+      AccountActivatedComponent
    ],
   imports: [
     BrowserModule,
