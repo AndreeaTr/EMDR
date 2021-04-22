@@ -56,6 +56,7 @@ export class PasswordResetComponent implements OnInit {
 
           responseBody =>
             {
+              console.log(responseBody);
               this.successMsg = "Your Password has been reset successfully";
             },
 
