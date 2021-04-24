@@ -54,10 +54,10 @@
 <!-- HERO -->
 <div [ngStyle]="{'background-image': 'url(' + herosrc + ')'}" alt="girl with laptop attends EMDR session" class="home-body d-flex flex-column align-items-center justify-content-center">
   <h1 class="tablet-title text-center">EMDR Therapy</h1>
-  <p class="tablet-motto text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p class="tablet-motto text-center">Heal from the past to succeed in the future.</p>
   <button routerLink='/login' class="tablet-start-button start-button" mat-raised-button color="#20BEA7">Start Therapy</button>
   <div class="animated-motto">
-    <h4 class="motto">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</h4>
+    <h4 class="motto text-start">Heal from the past in order to succeed in the future.</h4>
   </div>
 </div>
 
@@ -81,24 +81,24 @@
     <div class="cards row">
       <div class="col-12 col-lg-4 card-container">
         <div class="professional-card text-start">
-          <h3 class="card-title">Jane Doe</h3>
-          <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
+          <h3 class="card-title">Jane Smith</h3>
+          <p class="card-description">“As a therapist, you have to remember that for each patient you may be the only person truly capable of hearing and holding their pain. This is sacred. ”</p>
           <div [ngStyle]="{'background-image': 'url(' + card1src + ')'}" alt="therapist smiling with kindness" class="card-photo photo1"></div>       
         </div>       
       </div> 
       
       <div class="col-12 col-lg-4 card-container">
         <div class="professional-card text-start">
-          <h3 class="card-title">John Doe</h3>
-          <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
+          <h3 class="card-title">John Lakin</h3>
+          <p class="card-description">“A healing journey takes time, it requires dedication, it will sometimes hurt and it requires sacrifice but in the end, it will all be worth it.”</p>
           <div [ngStyle]="{'background-image': 'url(' + card2src + ')'}" alt="therapist smiling with kindness" class="card-photo photo2"></div>       
         </div>     
       </div>
 
     <div class="col-12 col-lg-4 card-container">
       <div class="professional-card text-start">
-        <h3 class="card-title">Jane Doe</h3>
-        <p class="card-description">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.”</p>
+        <h3 class="card-title">Sarah Pearlman</h3>
+        <p class="card-description">“Strength doesn't come from what you can do, but from overcoming the hardships you once thought will stick with you forever.”</p>
         <div [ngStyle]="{'background-image': 'url(' +card3src + ')'}" alt="therapist smiling with kindness" class="card-photo photo3"></div>       
       </div>      
     </div>
@@ -115,7 +115,28 @@
 
       <mat-expansion-panel class="faqs-panel" [expanded]="true">
         <mat-expansion-panel-header>
-          <mat-panel-title> Question number 1</mat-panel-title>
+          <mat-panel-title> What is EMDR therapy?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>EMDR (Eye Movement Desensitization and Reprocessing) is a psychotherapy technique that was developed to help people cope with the pain of painful memories (Shapiro, 1989a, 1989b). According to Shapiro's (2001) Adaptive Information Processing model, EMDR counseling helps people access and interpret painful memories and other negative life experiences in order to reach an adaptive resolution.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="faqs-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title> Who can benefit from EMDR therapy?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="faqs-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title> How does EMDR treatment work?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="faqs-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title> How effective is EMDR?</mat-panel-title>
           <!-- <mat-panel-description></mat-panel-description> -->
         </mat-expansion-panel-header>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -123,31 +144,7 @@
 
       <mat-expansion-panel class="faqs-panel">
         <mat-expansion-panel-header>
-          <mat-panel-title> Question number 2</mat-panel-title>
-          <!-- <mat-panel-description></mat-panel-description> -->
-        </mat-expansion-panel-header>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </mat-expansion-panel>
-
-      <mat-expansion-panel class="faqs-panel">
-        <mat-expansion-panel-header>
-          <mat-panel-title> Question number 3</mat-panel-title>
-          <!-- <mat-panel-description></mat-panel-description> -->
-        </mat-expansion-panel-header>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </mat-expansion-panel>
-
-      <mat-expansion-panel class="faqs-panel">
-        <mat-expansion-panel-header>
-          <mat-panel-title> Question number 4</mat-panel-title>
-          <!-- <mat-panel-description></mat-panel-description> -->
-        </mat-expansion-panel-header>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </mat-expansion-panel>
-
-      <mat-expansion-panel class="faqs-panel">
-        <mat-expansion-panel-header>
-          <mat-panel-title> Question number 5</mat-panel-title>
+          <mat-panel-title> How many sessions will it take?</mat-panel-title>
           <!-- <mat-panel-description></mat-panel-description> -->
         </mat-expansion-panel-header>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -196,7 +193,7 @@
     <div class="row">
       <div class="content-left col-md-6">
        <a class="a-link" (click)="navTo(home)"><img class="logo" src="assets/img/emdr official.svg" alt="EMDR therapy logo"/></a>
-        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+        <div class="description">Provides easy access to revolutionary therapy from any environment the user feels comfortable in.</div>
       </div>
 
       <div class="content-middle col-md-3">

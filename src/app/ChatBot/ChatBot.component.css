@@ -169,6 +169,7 @@
 .box-text {
     flex: 13;
     color: #4a4a4a;
+    text-align: start;
 }
 
 .description2 {
