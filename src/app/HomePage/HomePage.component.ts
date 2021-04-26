@@ -26,6 +26,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
   card3src = "assets/img/michael-dam-mEZ3PoFGs_k-unsplash.jpg";
   contactsrc = "assets/img/social-media-2786261_1920.jpg";
   isLogged: boolean;
+  screenWidth: number = window.innerWidth;
 
 
   constructor(private router:Router, private activeRoute: ActivatedRoute, private location: Location, private http: HttpClient) { }
@@ -185,6 +186,11 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
     sessionStorage.removeItem('token');
     this.isLogged = false;
     this.router.navigate(["/"]);
+  }
+
+
+  onResize(event) {
+      this.screenWidth = event.target.innerWidth;
   }
 
 }
