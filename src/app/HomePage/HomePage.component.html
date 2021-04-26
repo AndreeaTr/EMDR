@@ -51,20 +51,11 @@
 
 </div>
 
-<!-- HERO -->
-<!-- <div [ngStyle]="{'background-image': 'url(' + herosrc + ')'}" alt="girl with laptop attends EMDR session" class="home-body d-flex flex-column align-items-center justify-content-center">
-  <h1 class="tablet-title text-center">EMDR Therapy</h1>
-  <p class="tablet-motto text-center">Heal from the past to succeed in the future.</p>
-  <button routerLink='/login' class="tablet-start-button start-button" mat-raised-button color="#20BEA7">Start Therapy</button>
-  <div class="animated-motto">
-    <h4 class="motto text-start">Heal from the past in order to succeed in the future.</h4>
-  </div>
-</div> -->
-
 <div (window:resize)="onResize($event)" [ngStyle]="screenWidth > 992 ? {'background-image': 'url(' + herosrc + ')'}:{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(' + herosrc + ')'}" alt="girl with laptop attends EMDR session" class="home-body d-flex flex-column align-items-center justify-content-center">
   <h1 class="tablet-title text-center">EMDR Therapy</h1>
   <p class="tablet-motto text-center">Heal from the past to succeed in the future.</p>
-  <button routerLink='/login' class="tablet-start-button start-button" mat-raised-button color="#20BEA7">Start Therapy</button>
+  <button *ngIf="isLogged" routerLink='/chat' class="tablet-start-button start-button" mat-raised-button color="#20BEA7">Start Therapy</button>
+  <button *ngIf="!isLogged" routerLink='/login' class="tablet-start-button start-button" mat-raised-button color="#20BEA7">Start Therapy</button>
   <div class="animated-motto">
     <h4 class="motto text-start">Heal from the past in order to succeed in the future.</h4>
   </div>

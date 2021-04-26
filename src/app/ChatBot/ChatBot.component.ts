@@ -19,11 +19,16 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
   consent: boolean;
   isLogged: boolean;
 
+  chatExpanded: boolean;
+
+  windowHeight;
+
   @ViewChild('chatMessages') private chatMessagesContainer: ElementRef;
 
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
+
 
     if(sessionStorage.getItem("token"))
     {
@@ -169,6 +174,16 @@ export class ChatBotComponent implements OnInit, AfterViewChecked {
     sessionStorage.removeItem('token');
     this.isLogged = false;
     this.router.navigate(["/"]);
+  }
+
+  openChat()
+  {
+    this.chatExpanded = true;
+  }
+
+  closeChat()
+  {
+    this.chatExpanded = false;
   }
 
 }

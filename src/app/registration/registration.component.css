@@ -5,8 +5,9 @@
 .register-page {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  flex-wrap: wrap;
+  min-height: 100%;
+  padding-top: 50px;
 }
 
 .register-box {
@@ -194,14 +195,11 @@ select:invalid option:not(:disabled) { color: rgb(54, 54, 54) }
 }
 
 .footer {
-  height: 15vh;
   display:flex;
+  width: 100vw;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  position: absolute;
-  bottom: 0px;
-
 }
 
 .bottom-nav {
@@ -224,8 +222,8 @@ select:invalid option:not(:disabled) { color: rgb(54, 54, 54) }
 
 .emdr {
   color:#929191;
-  position:relative;
-  top:15px;
+  /* position:relative;
+  top:15px; */
 }
 
 ::ng-deep.mat-progress-spinner circle,.mat-spinner circle {

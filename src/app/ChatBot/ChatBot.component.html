@@ -1,7 +1,7 @@
 
 <!-- Navbar -->
 
-<div class="nav-container">
+<div class="nav-container box-shadow-lower fixed-top">
   <div class="topbar">
     <div class="topbar-elements">
       <span>(+40)000 000000</span>
@@ -11,18 +11,34 @@
     </div>
   </div>
 
-  <div class="navbar">
-    <div class="nav-elements">
-      <a class="a-link" routerLink="/"><img class="logo-top" src="assets/img/emdr official.svg" alt="EMDR therapy logo"></a>
-      <span routerLink="/">Home</span>
-      <span (click)="navTo('therapy')">EMDR Therapy</span>
-      <span (click)="navTo('help')">Professional Help</span>
-      <span (click)="navTo('faqs')">FAQs</span>
-      <span (click)="navTo('contact')">Contact Us</span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white logo-bar">
+    <div class="container-fluid justify-content-lg-center">
+        <a class= "navbar-brand a-link" (click)="navTo('home')"><img class="logo-top d-inline-block align-text-top mg-2" width="130px" src="assets/img/emdr official.svg" alt="EMDR therapy logo"/></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-lg-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav">  
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo('home')">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo('therapy')">EMDR Therapy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo('help')">Professional Help</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo('faqs')">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link clickable" (click)="navTo('contact')">Contact Us</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
 </div>
-
 
 <div class="home-body">
 
@@ -62,6 +78,7 @@
               <p class="description2">When the session begins, try to focus on the ball while managing your feelings. You will have to do this twice. The first time you will process the traumatic event. The second time you will imagine a pleasant memory to replace the traumatic one.</p>
 
               <div matRipple><button routerLink='/therapy' class="start-button" mat-raised-button color="#20BEA7">Begin Session</button></div>
+              <div matRipple><button (click)="openChat()" class="start-button-tablet" mat-raised-button color="#20BEA7">Open Chat</button></div>
 
           </div>
       </div>
@@ -99,6 +116,39 @@
       </span></button>
     </form>
   </div>  
-  
 
+</div>
+
+<div class="chat-overlay" [ngStyle]="chatExpanded ? {'height': '100vh'} : {'height':'0px'}">
+  <div class="chat-topbar">
+    <p class="chat-title">ChatBot</p>
+    <button class='close-chat' (click)="closeChat()"><span class="material-icons">close</span></button>
+  </div>  
+  <div id="message-container" #chatMessages>
+
+    <div class="chat-row" *ngFor="let message of messages">
+
+      <div *ngIf="message.sender=='user'" class="chat-bubble chat-bubble-right">
+        {{message.message}}
+        <span class="chat-bubble-corner chat-bubble-corner-right"></span>
+      </div>
+
+      <div *ngIf="message.sender=='bot'" class="chat-bubble chat-bubble-left">
+        {{message.message}}
+        <span class="chat-bubble-corner chat-bubble-corner-left"></span>
+      </div>
+
+      <div class="chat-divider"></div>
+
+    </div>
+    
+  </div>
+
+
+  <form (ngSubmit)="sendMessage()" class="message-bar">
+    <input id="input" placeholder="Type something here..." autocomplete="off" [disabled]="isDisabled" [(ngModel)]="message" name="message"/>
+    <button id="send"><span class="material-icons">
+      send
+    </span></button>
+  </form>
 </div>
