@@ -7,14 +7,15 @@
   justify-content: center;
   flex-wrap: wrap;
   min-height: 100%;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .register-box {
   background-color:#20BEA7;
   border-radius: 23px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 50%;
+  /* width: 50%; */
+  width: 992px;
   display:flex;
   flex-direction: column;
   justify-content:center;
@@ -24,7 +25,7 @@
 }
 
 .logo {
-  width: 22%;
+  width: 200px;
   padding: 20px 0px;
 }
 
@@ -57,13 +58,16 @@
 }
 
 .alr-us{
-  font-size:13px;
+  font-size:14px;
+  font-weight: 300;
   color: white;
   padding-top: 20px;
 }
 
 .submit-button {
   width: 40%;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .alr-us a{
@@ -236,6 +240,71 @@ select:invalid option:not(:disabled) { color: rgb(54, 54, 54) }
   color: rgb(212, 212, 212);
 }
 
+@media only screen and (max-width: 992px)
+{
+  .register-page {
+    padding-top: 0px;
+  }
+
+  .register-box {
+    border-radius: 0px;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .logo {
+    width: 170px;
+    padding: 20px 0px;
+  }
+
+  .lower-register {
+    padding: 10px 0px;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+  .alr-us {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 576px)
+{
+
+  .form-row {
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+  }
+
+  .inp-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .password-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .lower-register {
+    padding-bottom: 30px;
+  }
+
+  .footer {
+    padding: 30px;
+  }
+}
 
 
-
+@media screen and (orientation: landscape)
+{
+  .lower-register {
+    padding-bottom: 30px;
+  } 
+  
+  .footer {
+    padding: 30px;
+  }
+}
