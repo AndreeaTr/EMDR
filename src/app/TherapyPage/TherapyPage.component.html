@@ -3,7 +3,7 @@
 
 <div class="ball-container" (mousemove)="showButtons()">
 
-  <div [ngStyle]="{'animation-play-state': ballstate}" class="ball">
+  <div #ball [ngStyle]="{'animation-play-state': ballstate}" (click)="playAudio()" class="ball">
   </div>
    
 </div>  

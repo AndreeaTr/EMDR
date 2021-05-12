@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-TherapyPage',
@@ -23,11 +23,29 @@ export class TherapyPageComponent implements OnInit {
   showFooter = 1;
   hideButtons;
   startDialogue = true;
+  audioCtx = new AudioContext();
+  audio = new Audio();
+  audioSource;
+  panNode: StereoPannerNode;
+  ballOrientation;
+  
+  @ViewChild('ball') ball; 
 
   constructor(@Inject(DOCUMENT) private document: any) {}
 
   ngOnInit() {
     this.elem = document.documentElement;
+
+    this.audio.src = "../../../assets/sound/328117__greenvwbeetle__pop-8.flac";
+    this.audio.load();
+
+    this.audioSource = this.audioCtx.createMediaElementSource(this.audio);
+    this.panNode = this.audioCtx.createStereoPanner();
+
+    this.audioSource.connect(this.panNode);
+    this.panNode.connect(this.audioCtx.destination);
+
+    this.panNode.pan.setValueAtTime(1, this.audioCtx.currentTime);
   }
 
   openFullscreen() {
@@ -171,6 +189,11 @@ export class TherapyPageComponent implements OnInit {
 
     this.toggle();
     this.startDialogue = false;
+    this.ball.nativeElement.onanimationiteration = () => {
+      this.ballOrientation = this.ballOrientation == 1 ? -1 : 1;
+      this.panNode.pan.setValueAtTime(this.ballOrientation, this.audioCtx.currentTime);
+      this.playAudio();
+    };
   }
 
 
@@ -212,6 +235,10 @@ export class TherapyPageComponent implements OnInit {
     {
       this.seconds = 0;
     }
+  }
+
+  playAudio(){
+    this.audio.play();
   }
   
 }
