@@ -165,7 +165,7 @@
         <div class="contact-form col-12 col-lg-6">
           <form (ngSubmit)="formValidation()">
             <div class="form-row1 row justify-content-lg-between"> 
-              <input [ngStyle]="{'border-color': usernameErr}" required class="row1 col-12 col-lg-6 margin-bottom-lg-15" type="text" name="username" placeholder="Username" id="username" [(ngModel)]="username">
+              <input [ngStyle]="{'border-color': usernameErr}" required class="row1 col-12 col-lg-6 margin-bottom-lg-15" type="text" name="username" placeholder="Name" id="username" [(ngModel)]="username">
               <input [ngStyle]="{'border-color': phoneErr}" required class="row1 col-12 col-lg-6" type="tel" name="Phone" placeholder="Phone" id="phone" [(ngModel)]="phonenumber">
             </div>
             <input [ngStyle]="{'border-color': mailErr}" required class="row2" type="text" name="Email" placeholder="Email" id="email" [(ngModel)]="email">
