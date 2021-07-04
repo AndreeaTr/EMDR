@@ -190,9 +190,9 @@ export class TherapyPageComponent implements OnInit {
     this.toggle();
     this.startDialogue = false;
     this.ball.nativeElement.onanimationiteration = () => {
-      this.ballOrientation = this.ballOrientation == 1 ? -1 : 1;
-      this.panNode.pan.setValueAtTime(this.ballOrientation, this.audioCtx.currentTime);
-      this.playAudio();
+    this.ballOrientation = this.ballOrientation == 1 ? -1 : 1;
+    this.panNode.pan.setValueAtTime(this.ballOrientation, this.audioCtx.currentTime);
+    this.playAudio();
     };
   }
 

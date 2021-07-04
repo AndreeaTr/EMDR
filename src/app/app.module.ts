@@ -49,7 +49,7 @@ import { BootstraphomepageComponent } from './bootstraphomepage/bootstraphomepag
 import { AccountActivatedComponent } from './AccountActivated/AccountActivated.component';
 
 @NgModule({
-  declarations: [									
+  declarations: [										
     AppComponent,
       HomePageComponent,
       RegistrationComponent,
