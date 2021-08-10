@@ -27,6 +27,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
   contactsrc = "assets/img/social-media-2786261_1920.jpg";
   isLogged: boolean;
   screenWidth: number = window.innerWidth;
+  emailSent: boolean;
 
 
   constructor(private router:Router, private activeRoute: ActivatedRoute, private location: Location, private http: HttpClient) { }
@@ -116,6 +117,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
       (response) => {
         console.log(response);
         this.formError = "";
+        this.emailSent = true;
       },
       (err) => {
         console.log(err);

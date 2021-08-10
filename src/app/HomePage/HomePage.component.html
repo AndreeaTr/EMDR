@@ -173,7 +173,7 @@
             <div class="form-bottom">
               <div>
                 <p *ngIf="buttonClicked && formError" class="error">{{formError}}</p> 
-                <p *ngIf="buttonClicked && !formError" class="successful-mail">Mail sent succesfully!</p>
+                <p *ngIf="buttonClicked && emailSent" class="successful-mail">Mail sent succesfully!</p>
               </div>
               <div class="button-container" matRipple ><button class="send-button" mat-raised-button color="#20BEA7">Send Message</button></div>
             </div>

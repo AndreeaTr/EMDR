@@ -121,7 +121,24 @@ export class RegistrationComponent implements OnInit {
 
             responseBody =>
               {
+                this.errorMsg = "";
                 this.successMsg = "Activation email sent successfully. Please check your inbox!"
+
+                // Resetting the form
+                /*this.registrationForm.reset();
+
+                this.emailclick = false;
+                this.firstnameclick = false; 
+                this.lastnameclick = false;
+                this.bdayclick = false;
+                this.phoneclick = false;
+                this.genderclick = false;
+                this.pcodeclick = false;
+                this.countryclick = false;
+                this.passclick = false;
+                this.repassclick = false;*/
+                // 
+
                 console.log(responseBody);
               },
 
@@ -130,6 +147,7 @@ export class RegistrationComponent implements OnInit {
                 // this.registrationError = true;
                 // this.isClicked = false;
                 console.log(err);
+                this.errorMsg = err.error[0].errorENG;
               },
 
             () =>
